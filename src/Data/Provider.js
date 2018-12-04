@@ -13,13 +13,13 @@ class MyProvider extends Component {
     }
 
     changeValue = (value, name) => {
-        console.log(value)
         this.setState({ 
             presetInfo: { 
                 ...this.state.presetInfo,
                 filters: { ...this.state.presetInfo.filters,
-                    [name]: {...this.state.presetInfo.filters[name], value: value}}}
-        }, () => console.log(this.state.presetInfo.filters.grayscale))
+                    //[(name === "hueRotate" ? "hue-rotate" : name)]: {...this.state.presetInfo.filters[name], value: value }}}
+                    [name]: {...this.state.presetInfo.filters[name], value: value }}}
+        })
     }
 
     render() {

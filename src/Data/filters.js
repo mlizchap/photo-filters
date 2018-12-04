@@ -32,37 +32,37 @@ export const filters =
         value: 0,
         unit: ""
     }, 
-    hueRotate: {
-        "name": "hue-rotate",
-        "min": -180,
-        "max": 180,
-        "step": 0.1,
-        "value": 0,
-        "unit": "deg" 
+    "hue-rotate": {
+        name: "hue-rotate",
+        min: -180,
+        max: 180,
+        step: 0.1,
+        value: 0,
+        unit: "deg" 
     },
     brightness: {
-        "name": "brightness",
-        "min": 0,
-        "max": 200,
-        "step": 0.1,
-        "value": 100,
-        "unit": "%"
+        name: "brightness",
+        min: 0,
+        max: 200,
+        step: 0.1,
+        value: 100,
+        unit: "%"
     },
     contrast: {
-        "name": "contrast",
-        "min": 0,
-        "max": 3,
-        "step": 0.01,
-        "value": 1,
-        "unit": ""
+        name: "contrast",
+        min: 0,
+        max: 3,
+        step: 0.01,
+        value: 1,
+        unit: ""
     },
     opacity: {
-        "name": "opacity",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "value": 1,
-        "unit": ""
+        name: "opacity",
+        min: 0,
+        max: 1,
+        step: 0.01,
+        value: 1,
+        unit: ""
     }
 }
 

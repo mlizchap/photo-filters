@@ -17,8 +17,10 @@ class Filters extends Component {
                     return (
                         <div>
                             {Object.keys(filters).map(key => {
+                                
                                 return (
-                                    <div key={filters[key].name}>
+                                    <div key={key}>
+                                        {filters[key].name}:
                                         <input 
                                             type="range"
                                             step={filters[key].step}
@@ -27,6 +29,7 @@ class Filters extends Component {
                                             onChange={(e) => context.changeValue(e.target.value, filters[key].name)}
                                             value={context.state.presetInfo.filters[key].value}
                                         />
+                                         {filters[key].value}
                                     </div>
                                 )
                             })}
