@@ -30,7 +30,7 @@ export const presetInfo = {
         },
         background: bgDefaults
     },
-    nightVision: {
+    "night vision": {
         name: "night vision",
         filters: filters,
         background: {
@@ -51,7 +51,7 @@ export const presetInfo = {
             
         }
     },
-    1977: {
+    "1977": {
         name: "1977",
         filters: {
             ...filters,
@@ -81,6 +81,7 @@ export const presetInfo = {
         }
     },
     willow: {
+        name: "willow",
         filters: {
             ...filters,
             brightness: {...filters.brightness, value: 150 },

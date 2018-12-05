@@ -22,12 +22,20 @@ class MyProvider extends Component {
         })
     }
 
+    selectPreset = (selected) => {
+        console.log(selected)
+        this.setState({
+            presetInfo: presetInfo[selected]
+        })
+    }
+
     render() {
         return (
             <MyContext.Provider 
                 value={{
                     state: this.state,
-                    changeValue: this.changeValue
+                    changeValue: this.changeValue,
+                    selectPreset: this.selectPreset
                 }}
             >
                 {this.props.children}

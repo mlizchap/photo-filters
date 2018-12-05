@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-
-import './App.css';
-import {MyContext} from '../Data/Provider';
+import styled from 'styled-components';
 
 import Image from '../Sections/Image/Image';
 import Filters from '../Sections/Filters/Filters';
+import Preset from '../Sections/Preset/Preset';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <MyContext.Consumer>
-        {context => {
-          // console.log(Object.keys(context).map(i => console.log(context[i])))
-          return (
-            <div>
-              <Image />
-              <Filters />
-            </div>
-          )
-        }}
-
-      </MyContext.Consumer>
-    );
+      <StyledApp>
+        <Image />
+        <Preset />
+        <Filters />
+      </StyledApp>
+    )
   }
 }
 
 export default App;
+
+const StyledApp = styled.div`
+  background-color: orange;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+`
