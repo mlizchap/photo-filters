@@ -23,9 +23,21 @@ class MyProvider extends Component {
     }
 
     selectPreset = (selected) => {
-        console.log(selected)
         this.setState({
             presetInfo: presetInfo[selected]
+        })
+    }
+
+    changeSolidBgColor = (color) => {
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    solid: {...this.state.presetInfo.background.solid,
+                        color: color
+                    }
+                }
+            }
         })
     }
 
@@ -34,8 +46,9 @@ class MyProvider extends Component {
             <MyContext.Provider 
                 value={{
                     state: this.state,
-                    changeValue: this.changeValue,
-                    selectPreset: this.selectPreset
+                    changeValue: this.changeValue, // changes filter value
+                    selectPreset: this.selectPreset,
+                    changeSolidBgColor: this.changeSolidBgColor
                 }}
             >
                 {this.props.children}

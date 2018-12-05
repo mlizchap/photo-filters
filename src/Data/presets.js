@@ -25,7 +25,7 @@ export const presetInfo = {
         name: "infared",
         filters: {
             ...filters,
-            hueRotate: { ...filters.hueRotate, value: 180 },
+            'hue-rotate': { ...filters.hueRotate, value: 180 },
             saturate: {...filters.saturate, value: 200}
         },
         background: bgDefaults
@@ -75,7 +75,7 @@ export const presetInfo = {
             type: "solid",
             solid: {
                 ...bgDefaults.solid,
-                color: "rgba(229, 240, 128, .3)",
+                color: "rgba(229, 240, 128)",
                 blendMode: "darken"
             }
         }

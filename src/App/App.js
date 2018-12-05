@@ -5,6 +5,7 @@ import Image from '../Sections/Image/Image';
 import Filters from '../Sections/Filters/Filters';
 import Preset from '../Sections/Preset/Preset';
 import './App.css';
+import SolidBackground from '../Sections/Background/SolidBackground';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <StyledApp>
         <Image />
         <Preset />
+        <SolidBackground />
         <Filters />
       </StyledApp>
     )
@@ -21,7 +23,6 @@ class App extends Component {
 export default App;
 
 const StyledApp = styled.div`
-  background-color: orange;
   width: 90%;
   margin-right: auto;
   margin-left: auto;

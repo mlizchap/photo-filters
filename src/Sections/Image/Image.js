@@ -20,25 +20,23 @@ class Image extends Component {
         return (
             <MyContext.Consumer>
                 {context => {
-                    const { presetInfo } = context.state;
                     const { background } = context.state.presetInfo;
                     return (
                         <StyledImage>
                             <div
-                                className="bgColor"
                                 style={{ 
-                                    backgroundImage: `radial-gradient(blue 40%, orange 80%)`,
-                                    //backgroundColor: (background.type === "solid") ? background.solid.color : "none" 
+                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(blue 40%, orange 80%)` : "none",
+                                    backgroundColor: (background.type === "solid") ? background.solid.color : "none" 
                                 }}
                             >
                                 <img 
                                     src={`${image}`} 
                                     style={{
                                             filter: this.getFilterValues(context),
-                                            opacity: .5
-                                            //opacity: (background.type === "solid") ? background.solid.opacity : "none"   
+                                            opacity: (background.type === "solid") ? background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : "none"   
                                     }}
-                                    width="200px" alt="to edit" 
+                                    width="200px" 
+                                    alt="to edit" 
                                 />
                             </div>
                         </StyledImage>
