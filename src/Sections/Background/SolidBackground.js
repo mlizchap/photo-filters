@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import { MyContext } from '../../Data/Provider';
-import ColorPicker from '../../Components/ColorPicker/ColorPicker';
+import ColorPicker from '../../Components/ColorPicker';
+import BlendmodeSelect from '../../Components/BlendmodeSelect/BlendmodeSelect';
 
 class SolidBackground extends Component {
     constructor(props) {
@@ -11,17 +12,26 @@ class SolidBackground extends Component {
     render() {
         return (
             <MyContext.Consumer>
-                {/* {console.log(context.state.presetInfo.background.solid)} */}
                 {context => {
-                    const { color } = context.state.presetInfo.background.solid;
-                    console.log(color)
+                    const { opacity, blendMode } = context.state.presetInfo.background.solid;
+                    console.log(blendMode)
                     return (
                         <div>
                             [SOLID BACKGROUND]
                             <ColorPicker 
-                                //color="orange"
-                                handleSelectColor={(color) => context.changeSolidBgColor(color)}
+                                handleSelectColor={context.changeSolidBgColor}
                             />
+                            
+                            opacity: 
+                            <input 
+                                type="range"
+                                value={opacity}
+                                min={0}
+                                max={1}
+                                step={.01}
+                                onChange={context.changeSolidBgOpacity}
+                            />{opacity}
+                            <BlendmodeSelect display={blendMode}/>
                         </div>
                     )
                 }}

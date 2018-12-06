@@ -8,8 +8,8 @@ const bgDefaults = {
         blendMode: "normal"
     },
     gradient: {
-        inner: { color: "#ECECEC", amount: "20%" },
-        outer: { color: "#0D0D0D", amount: "80%" },
+        inner: { color: "#ECECEC", amount: 20 },
+        outer: { color: "#0D0D0D", amount: 80 },
         opacity: .5,
         blendMode: "normal"
     }                
@@ -40,11 +40,11 @@ export const presetInfo = {
                 ...bgDefaults.gradient,
                 inner: {
                     color: '#0F0',
-                    amount: '0%'
+                    amount: 0
                 },
                 outer: {
                     color: '#000',
-                    amount: '80%'
+                    amount: 80
                 },
                 blendMode: "multiply"
             },

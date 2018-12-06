@@ -6,6 +6,9 @@ import Filters from '../Sections/Filters/Filters';
 import Preset from '../Sections/Preset/Preset';
 import './App.css';
 import SolidBackground from '../Sections/Background/SolidBackground';
+import GradientBackground from '../Sections/Background/GradientBackground';
+import BlendmodeSelect from '../Components/BlendmodeSelect/BlendmodeSelect';
+import BackgroundContainer from '../Sections/Background/BackgroundContainer';
 
 class App extends Component {
   render() {
@@ -13,7 +16,7 @@ class App extends Component {
       <StyledApp>
         <Image />
         <Preset />
-        <SolidBackground />
+        <BackgroundContainer />
         <Filters />
       </StyledApp>
     )

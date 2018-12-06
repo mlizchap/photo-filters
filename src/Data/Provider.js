@@ -17,7 +17,6 @@ class MyProvider extends Component {
             presetInfo: { 
                 ...this.state.presetInfo,
                 filters: { ...this.state.presetInfo.filters,
-                    //[(name === "hueRotate" ? "hue-rotate" : name)]: {...this.state.presetInfo.filters[name], value: value }}}
                     [name]: {...this.state.presetInfo.filters[name], value: value }}}
         })
     }
@@ -41,6 +40,115 @@ class MyProvider extends Component {
         })
     }
 
+    changeSolidBgOpacity = (e) => {
+        const opacity = e.target.value;
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    solid: { ...this.state.presetInfo.background.solid, opacity }
+                }
+            }
+        })
+    }
+
+    changeInnerGradientAmount = (e) => {
+        const amount = e.target.value
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    gradient: {...this.state.presetInfo.background.gradient,
+                        inner: {...this.state.presetInfo.background.gradient.inner,
+                            amount
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    changeOuterGradientAmount = (e) => {
+        const amount = e.target.value
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    gradient: {...this.state.presetInfo.background.gradient,
+                        outer: {...this.state.presetInfo.background.gradient.outer,
+                            amount
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    changeInnerGradientColor = (color) => {
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    gradient: {...this.state.presetInfo.background.gradient,
+                        inner: {...this.state.presetInfo.background.gradient.inner,
+                            color
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    changeOuterGradientColor = (color) => {
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    gradient: {...this.state.presetInfo.background.gradient,
+                        outer: {...this.state.presetInfo.background.gradient.outer,
+                            color
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    selectBlendMode = (blendMode) => {
+        if (this.state.presetInfo.background.type === "solid") {
+            this.setState({ 
+                presetInfo: { 
+                    ...this.state.presetInfo,
+                    background: {...this.state.presetInfo.background,
+                        solid: { ...this.state.presetInfo.background.solid, blendMode }
+                    }
+                }
+            })
+        } else {
+            this.setState({ 
+                presetInfo: { 
+                    ...this.state.presetInfo,
+                    background: {...this.state.presetInfo.background,
+                        gradient: {...this.state.presetInfo.background.gradient,
+                            blendMode
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    changeBgType = (type) => {
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    type
+                }
+            }
+        })
+    }
+
     render() {
         return (
             <MyContext.Provider 
@@ -48,7 +156,14 @@ class MyProvider extends Component {
                     state: this.state,
                     changeValue: this.changeValue, // changes filter value
                     selectPreset: this.selectPreset,
-                    changeSolidBgColor: this.changeSolidBgColor
+                    changeSolidBgColor: this.changeSolidBgColor,
+                    changeSolidBgOpacity: this.changeSolidBgOpacity,
+                    changeInnerGradientAmount: this.changeInnerGradientAmount,
+                    changeOuterGradientAmount: this.changeOuterGradientAmount,
+                    changeInnerGradientColor: this.changeInnerGradientColor, 
+                    changeOuterGradientColor: this.changeOuterGradientColor,
+                    selectBlendMode: this.selectBlendMode,
+                    changeBgType: this.changeBgType
                 }}
             >
                 {this.props.children}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import { MyContext } from '../../Data/Provider';
 
@@ -10,6 +11,7 @@ class Filters extends Component {
                     const filters = context.state.presetInfo.filters
                     return (
                         <div>
+                            [FILTERS]
                             {Object.keys(filters).map(key => {
                                 return (
                                     <div key={key}>
@@ -35,3 +37,7 @@ class Filters extends Component {
 }
 
 export default Filters;
+
+const FilterSectionStyle = styled.div`
+
+`

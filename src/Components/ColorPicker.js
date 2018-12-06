@@ -78,5 +78,5 @@ class ColorPicker extends React.Component {
 export default ColorPicker;
 
 ColorPicker.defaultProps = {
-    //handleSelectColor: (color) => console.log(color)
+    handleSelectColor: (color) => console.log(color)
 }

@@ -21,11 +21,15 @@ class Image extends Component {
             <MyContext.Consumer>
                 {context => {
                     const { background } = context.state.presetInfo;
+                    console.log("XX", background.type)
+                    console.log(`radial-gradient(${background.gradient.outer.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)`)
                     return (
                         <StyledImage>
                             <div
                                 style={{ 
-                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(blue 40%, orange 80%)` : "none",
+                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
+
+//                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.outer.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
                                     backgroundColor: (background.type === "solid") ? background.solid.color : "none" 
                                 }}
                             >
@@ -33,7 +37,8 @@ class Image extends Component {
                                     src={`${image}`} 
                                     style={{
                                             filter: this.getFilterValues(context),
-                                            opacity: (background.type === "solid") ? background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : "none"   
+                                            opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : "none",   
+                                            mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
                                     width="200px" 
                                     alt="to edit" 
