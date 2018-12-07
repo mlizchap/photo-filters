@@ -55,12 +55,12 @@ class BackgroundContainer extends Component {
 export default BackgroundContainer;
 
 const StyledBackgroundContainer = styled.div`
-    background-color: lightgreen;
+    // background-color: lightgreen;
     width: 100%;
     // padding-bottom: 10px;
     .bgTypeButtons {
         display: flex;
-        padding-top: 15px;
+        // padding-top: 15px;
         padding-bottom: 15px;
         justify-content: space-around;
     }

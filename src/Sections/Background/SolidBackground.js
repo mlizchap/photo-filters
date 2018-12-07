@@ -51,7 +51,7 @@ class SolidBackground extends Component {
 export default SolidBackground;
 
 const StyledSolidBackground = styled.div`
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     .solidDetails {
         display: flex;
         flex-direction: column;

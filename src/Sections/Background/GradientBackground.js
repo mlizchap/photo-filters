@@ -95,6 +95,7 @@ export default GradientBackground;
 const StyledGradientBackground = styled.div`
     // background-color: orange;
     padding: 10px;
+    padding-bottom: 0px;
     p {
         font-size: 10pt;
     }

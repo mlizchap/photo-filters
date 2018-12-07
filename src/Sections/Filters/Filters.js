@@ -51,7 +51,5 @@ class Filters extends Component {
 export default Filters;
 
 const StyledFilterSection = styled.div`
-    background-color: purple;
     text-align: center;
-    padding: 20px;
 `

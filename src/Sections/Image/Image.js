@@ -25,7 +25,7 @@ class Image extends Component {
                         <StyledImage>
                             <div
                                 style={{ 
-                                    width: "80%", 
+                                    width: "60%", 
                                     backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
                                     backgroundColor: (background.type === "solid") ? background.solid.color : "white" 
                                 }}

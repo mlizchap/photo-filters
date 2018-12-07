@@ -28,10 +28,10 @@ class CollapsableBox extends React.Component {
   render() {
     return (
       <StyledCollapsableBox>
-        <h2 className="title" onClick={this.toggleOpen}>
+        <h2 className="sectionTitle" onClick={this.toggleOpen}>
           {this.props.title}
         </h2>
-        <Content className="content" pose={this.state.open ? "open" : "closed"}>
+        <Content className="sectionContent" pose={this.state.open ? "open" : "closed"}>
           <h3>{this.props.content}</h3>
         </Content>
       </StyledCollapsableBox>
@@ -43,23 +43,21 @@ class CollapsableBox extends React.Component {
 export default CollapsableBox;
 
 const StyledCollapsableBox = styled.div`
-    .title {
+    .sectionTitle {
         cursor: pointer;
         background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
-        padding: 5px 8px;
-        border-bottom: 1px solid #9f0092;
+        padding: 8px 0px;
+        text-align: center;
+        // border-bottom: 1px solid #9f0092;
+        margin-bottom: 0;
+        font-size: 12px;
     }
-    .content {
+    .sectionContent {
+        margin-top: 0;
+        padding-top: 0;
         overflow: hidden;
-        font-size: 18px;
-        color: #ff1c68;
+
+        color: white;
         background: rgba(0, 0, 0, 0.8);
-      }
-      .content h3 {
-        padding: 15px;
-      }
-      
-      .content-wrapper {
-        padding: 5px 8px 20px 8px;
       }
 `
