@@ -33,7 +33,7 @@ class GradientBackground extends Component {
                                 <div className="slider">
                                     <Slider 
                                             width="100%"
-                                            value={inner.amount}
+                                            value={Math.round(inner.amount)}
                                             title="amount:"
                                             min={0}
                                             max={100}
@@ -56,7 +56,7 @@ class GradientBackground extends Component {
                                 <div className="slider">
                                 <Slider 
                                     width="100%"
-                                    value={outer.amount}
+                                    value={`${Math.round(outer.amount)}`}
                                     title="amount:"
                                     min={0}
                                     max={100}
@@ -93,7 +93,7 @@ class GradientBackground extends Component {
 export default GradientBackground;
 
 const StyledGradientBackground = styled.div`
-    background-color: orange;
+    // background-color: orange;
     p {
         font-size: 10pt;
     }
@@ -104,13 +104,11 @@ const StyledGradientBackground = styled.div`
         padding-top: 5px;
     }
     .colorSection {
-        background-color: yellow;
         display: flex;
         justify-content: space-around;
-        padding-top: 10px;
     }
     .colorSection > div {
-        padding-right: 10px;
+        padding-right: 20px;
         padding-left: 10px;
     }
     .bottomRow {
@@ -119,11 +117,12 @@ const StyledGradientBackground = styled.div`
     }
     .blendMode {
         padding-right: 10px;
-        padding-left: 10px;
+        padding-left: 20px;
+        padding-top: 10px;
     }
     .opacitySlider {
         flex-grow: 1;
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 `
