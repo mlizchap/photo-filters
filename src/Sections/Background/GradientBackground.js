@@ -19,6 +19,7 @@ class GradientBackground extends Component {
                             [GRADIENT BACKGROUND]
                             <p>inner:</p>
                             <ColorPicker 
+                                color={inner.color}
                                 handleSelectColor={context.changeInnerGradientColor}
                             />
                             amount: <input 
@@ -29,6 +30,7 @@ class GradientBackground extends Component {
 
                             <p>outer:</p>
                             <ColorPicker 
+                                color={outer.color}
                                 handleSelectColor={context.changeOuterGradientColor}
                             />
                             amount: <input 

@@ -13,9 +13,7 @@ class Image extends Component {
     getFilterValues = (context) => {
         const { filters } = context.state.presetInfo;
         let filterString = ""
-        Object.keys(filters).forEach(key => filterString += `${key}(${filters[key].value}${filters[key].unit}) `)
-        console.log(filters)
-        
+        Object.keys(filters).forEach(key => filterString += `${key}(${filters[key].value}${filters[key].unit}) `)        
         return filterString.trim();
     }
     render() {
@@ -35,8 +33,8 @@ class Image extends Component {
                                     src={`${image}`} 
                                     style={{
                                             filter: this.getFilterValues(context),
-                                            // opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : 1,   
-                                            // mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
+                                            opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : 1,   
+                                            mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
                                     width="200px" 
                                     alt="to edit" 

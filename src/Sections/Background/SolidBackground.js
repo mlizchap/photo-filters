@@ -13,12 +13,13 @@ class SolidBackground extends Component {
         return (
             <MyContext.Consumer>
                 {context => {
-                    const { opacity, blendMode } = context.state.presetInfo.background.solid;
+                    const { opacity, blendMode, color } = context.state.presetInfo.background.solid;
                     console.log(blendMode)
                     return (
                         <div>
                             [SOLID BACKGROUND]
                             <ColorPicker 
+                                color={color}
                                 handleSelectColor={context.changeSolidBgColor}
                             />
                             
