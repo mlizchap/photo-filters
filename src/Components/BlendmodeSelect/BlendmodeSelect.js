@@ -54,9 +54,9 @@ class BlendmodeSelect extends Component {
 export default BlendmodeSelect;
 
 const StyledBlendModeSelect = styled.div`
-    width: 150px;
+    width: 100px;
     button {
-        width: 150px;
+        width: 100px;
     }
     .item {
         background-color: blue;

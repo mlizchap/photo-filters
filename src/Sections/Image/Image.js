@@ -33,7 +33,7 @@ class Image extends Component {
                                     src={`${image}`} 
                                     style={{
                                             filter: this.getFilterValues(context),
-                                            opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? background.gradient.opacity : 1,   
+                                            opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? 1 - background.gradient.opacity : 1,   
                                             mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
                                     width="200px" 

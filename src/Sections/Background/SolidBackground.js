@@ -51,8 +51,7 @@ class SolidBackground extends Component {
 export default SolidBackground;
 
 const StyledSolidBackground = styled.div`
-    // width: 90%;
-    padding: ${props => props.theme.subsectionBgPadding};
+    padding-top: 10px;
     .solidDetails {
         display: flex;
         flex-direction: column;
@@ -61,12 +60,12 @@ const StyledSolidBackground = styled.div`
     .topRow {
         display: flex;
         justify-content: space-around;
-        // padding-top: ${props => props.theme.subsectionBgPadding};
     }
     .bottomRow {
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         padding-top: 5px;
+        padding-left: 15px;
     }
     .colorPicker {
         padding-top: 8px;

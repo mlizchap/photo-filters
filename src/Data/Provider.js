@@ -149,6 +149,20 @@ class MyProvider extends Component {
         })
     }
 
+    changeGradientOpacity = (e) => {
+        const opacity = e.target.value;
+        this.setState({ 
+            presetInfo: { 
+                ...this.state.presetInfo,
+                background: {...this.state.presetInfo.background,
+                    gradient: {...this.state.presetInfo.background.gradient,
+                        opacity
+                    }
+                }
+            }
+        })
+    }
+
     render() {
         return (
             <MyContext.Provider 
@@ -162,6 +176,7 @@ class MyProvider extends Component {
                     changeOuterGradientAmount: this.changeOuterGradientAmount,
                     changeInnerGradientColor: this.changeInnerGradientColor, 
                     changeOuterGradientColor: this.changeOuterGradientColor,
+                    changeGradientOpacity: this.changeGradientOpacity,
                     selectBlendMode: this.selectBlendMode,
                     changeBgType: this.changeBgType
                 }}

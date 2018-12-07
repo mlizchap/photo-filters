@@ -57,6 +57,7 @@ export default BackgroundContainer;
 const StyledBackgroundContainer = styled.div`
     background-color: lightblue;
     width: 100%;
+    padding-bottom: 10px;
     .bgTypeButtons {
         display: flex;
         padding-top: ${props => props.theme.subsectionBgPadding};
