@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import { MyContext } from '../../Data/Provider';
 import ColorPicker from '../../Components/ColorPicker';
@@ -15,14 +16,14 @@ class GradientBackground extends Component {
                 {context => {
                     const { inner, outer, blendMode } = context.state.presetInfo.background.gradient;
                     return (
-                        <div>
+                        <StyledGradientBackground>
                             [GRADIENT BACKGROUND]
                             <p>inner:</p>
                             <ColorPicker 
                                 color={inner.color}
                                 handleSelectColor={context.changeInnerGradientColor}
                             />
-                            amount: <input 
+                            <input 
                                 value={inner.amount}
                                 onChange={context.changeInnerGradientAmount}
                                 type="range"
@@ -33,7 +34,7 @@ class GradientBackground extends Component {
                                 color={outer.color}
                                 handleSelectColor={context.changeOuterGradientColor}
                             />
-                            amount: <input 
+                            <input 
                                 value={outer.amount}
                                 onChange={context.changeOuterGradientAmount}
                                 type="range"
@@ -41,7 +42,7 @@ class GradientBackground extends Component {
 
                             <BlendmodeSelect display={blendMode} />
             
-                        </div>
+                        </StyledGradientBackground>
                     )
                 }}
             </MyContext.Consumer>
@@ -51,29 +52,6 @@ class GradientBackground extends Component {
 
 export default GradientBackground;
 
-// const { inner: { color } } = context.state.presetInfo.background.gradient;
-// console.log(inner, color)
-// return (
-//     <div>
-//         [GRADIENT BACKGROUND]
-//         <p>inner:</p>
-//         <ColorPicker />
-//         <input 
-            
-//             type="range" 
-//         />
-        
-//         <p>outer:</p>
-//         <ColorPicker />
-//         <input 
-//             type="range" 
-//         />
-        
-//         <p>opacity</p>
-//         <input 
-//             type="range"
-//         />
-
-//     </div>
-// );
-// }
+const StyledGradientBackground = styled.div`
+    background-color: orange;
+`

@@ -58,7 +58,7 @@ class ColorPicker extends React.Component {
     });
 
     return (
-      <div>
+      <div style={{ display: 'inline'}}>
         <div style={ styles.swatch } onClick={ this.handleClick }>
           <div style={ styles.color } />
         </div>

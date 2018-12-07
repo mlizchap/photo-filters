@@ -6,6 +6,7 @@ import Filters from '../Sections/Filters/Filters';
 import Preset from '../Sections/Preset/Preset';
 import './App.css';
 import BackgroundContainer from '../Sections/Background/BackgroundContainer';
+import Slider from '../Components/Slider';
 
 class App extends Component {
   render() {
