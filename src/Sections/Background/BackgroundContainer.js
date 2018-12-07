@@ -57,7 +57,7 @@ export default BackgroundContainer;
 const StyledBackgroundContainer = styled.div`
     background-color: lightgreen;
     width: 100%;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     .bgTypeButtons {
         display: flex;
         padding-top: 15px;

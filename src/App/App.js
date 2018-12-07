@@ -12,10 +12,12 @@ class App extends Component {
   render() {
     return (
       <StyledApp>
+        <div className="app">
         <Image />
         <Preset />
         <BackgroundContainer />
         <Filters />
+        </div>
       </StyledApp>
     )
   }
@@ -27,4 +29,8 @@ const StyledApp = styled.div`
   width: 90%;
   margin-right: auto;
   margin-left: auto;
+  .app > div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `

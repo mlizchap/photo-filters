@@ -25,6 +25,7 @@ class Image extends Component {
                         <StyledImage>
                             <div
                                 style={{ 
+                                    width: "80%", 
                                     backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
                                     backgroundColor: (background.type === "solid") ? background.solid.color : "white" 
                                 }}
@@ -36,7 +37,7 @@ class Image extends Component {
                                             opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? 1 - background.gradient.opacity : 1,   
                                             mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
-                                    width="200px" 
+                                    width="100%" 
                                     alt="to edit" 
                                 />
                             </div>
@@ -51,5 +52,6 @@ class Image extends Component {
 export default Image;
 
 const StyledImage = styled.div`
-    width: 200px;
+    display: flex;
+    justify-content: center;
 `

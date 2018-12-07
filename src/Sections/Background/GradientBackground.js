@@ -94,6 +94,7 @@ export default GradientBackground;
 
 const StyledGradientBackground = styled.div`
     // background-color: orange;
+    padding: 10px;
     p {
         font-size: 10pt;
     }
@@ -108,8 +109,8 @@ const StyledGradientBackground = styled.div`
         justify-content: space-around;
     }
     .colorSection > div {
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
     .bottomRow {
         display: flex;
@@ -117,12 +118,12 @@ const StyledGradientBackground = styled.div`
     }
     .blendMode {
         padding-right: 10px;
-        padding-left: 20px;
+        padding-left: 10px;
         padding-top: 10px;
     }
     .opacitySlider {
         flex-grow: 1;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 `

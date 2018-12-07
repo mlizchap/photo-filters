@@ -58,6 +58,9 @@ const StyledBlendModeSelect = styled.div`
     button {
         width: 100px;
     }
+    .content {
+        position: absolute;
+    }
     .item {
         background-color: blue;
         &:hover {

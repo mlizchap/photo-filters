@@ -51,6 +51,7 @@ class SolidBackground extends Component {
 export default SolidBackground;
 
 const StyledSolidBackground = styled.div`
+    padding-bottom: 10px;
     .solidDetails {
         display: flex;
         flex-direction: column;
@@ -59,6 +60,8 @@ const StyledSolidBackground = styled.div`
     .topRow {
         display: flex;
         justify-content: space-around;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .bottomRow {
         display: flex;
