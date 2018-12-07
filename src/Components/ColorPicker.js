@@ -23,7 +23,6 @@ class ColorPicker extends React.Component {
 
   handleChange = (color) => {
     const {r, g, b, a} = this.state.color;
-    console.log(r, g, b, a)
     this.setState({ color: color.rgb },  () => this.props.handleSelectColor(`rgba(${r}, ${g}, ${b}, ${a})`))
   };
 
@@ -34,7 +33,6 @@ class ColorPicker extends React.Component {
           width: '36px',
           height: '14px',
           borderRadius: '4px',
-          //background: `${this.props.color}`
           background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
         },
         swatch: {
@@ -58,8 +56,6 @@ class ColorPicker extends React.Component {
         },
       },
     });
-
-    console.log(`rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`)
 
     return (
       <div>

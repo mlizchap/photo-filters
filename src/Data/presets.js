@@ -25,7 +25,7 @@ export const presetInfo = {
         name: "infared",
         filters: {
             ...filters,
-            'hue-rotate': { ...filters.hueRotate, value: 180 },
+            'hue-rotate': { ...filters['hue-rotate'], value: 180 },
             saturate: {...filters.saturate, value: 200}
         },
         background: bgDefaults
@@ -51,12 +51,12 @@ export const presetInfo = {
             
         }
     },
-    "1977": {
+    1977: {
         name: "1977",
         filters: {
             ...filters,
             sepia: { ...filters.sepia, value: 0.5 },
-            hueRotate: {...filters.hueRotate, value: -30 },
+            'hue-rotate': {...filters['hue-rotate'], value: -30 },
             saturate: { ...filters.saturate, value: 140 }
         },
         background: bgDefaults

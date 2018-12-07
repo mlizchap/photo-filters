@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import { MyContext } from '../../Data/Provider';
 
@@ -38,6 +38,6 @@ class Filters extends Component {
 
 export default Filters;
 
-const FilterSectionStyle = styled.div`
+// const FilterSectionStyle = styled.div`
 
-`
+// `

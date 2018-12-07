@@ -13,8 +13,7 @@ class GradientBackground extends Component {
         return (
             <MyContext.Consumer>
                 {context => {
-                    const { inner, outer, blendMode, opacity} = context.state.presetInfo.background.gradient;
-                    //console.log(inner, outer)
+                    const { inner, outer, blendMode } = context.state.presetInfo.background.gradient;
                     return (
                         <div>
                             [GRADIENT BACKGROUND]

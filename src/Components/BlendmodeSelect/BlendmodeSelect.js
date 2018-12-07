@@ -19,7 +19,6 @@ class BlendmodeSelect extends Component {
         this.toggleContent();
     }
     render() {
-        console.log(this.props.display)
         return (
             <StyledBlendModeSelect>
                 <MyContext.Consumer>
