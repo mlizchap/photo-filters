@@ -7,16 +7,18 @@ import Preset from '../Sections/Preset/Preset';
 import './App.css';
 import BackgroundContainer from '../Sections/Background/BackgroundContainer';
 import Slider from '../Components/Slider';
+import CollapsableBox from '../Components/CollapsableBox';
 
 class App extends Component {
   render() {
     return (
       <StyledApp>
         <div className="app">
-        <Image />
-        <Preset />
-        <BackgroundContainer />
-        <Filters />
+          <Image />
+          <CollapsableBox title="TEST TITLE" content="TEST CONTENT"/>
+          <Preset />
+          <BackgroundContainer />
+          <Filters />
         </div>
       </StyledApp>
     )

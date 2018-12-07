@@ -6,6 +6,7 @@
     "react": "^16.6.3",
     "react-color": "^2.14.1",
     "react-dom": "^16.6.3",
+    "react-pose": "^4.0.4",
     "react-scripts": "2.1.1",
     "reactcss": "^1.2.3",
     "styled-components": "^4.1.2"
