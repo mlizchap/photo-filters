@@ -109,7 +109,7 @@ const StyledGradientBackground = styled.div`
     }
     .colorSection > div {
         padding-right: 20px;
-        padding-left: 10px;
+        padding-left: 20px;
     }
     .bottomRow {
         display: flex;
