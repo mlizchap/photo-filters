@@ -7,6 +7,7 @@ import './App.css';
 import CollapsableFilters from '../Sections/Filters/CollapsableFilters';
 import CollapsableBackgroundContainer from '../Sections/Background/CollapsableBackgroundContainer';
 import Header from '../Sections/Header/Header';
+import Footer from '../Sections/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <CollapsableBackgroundContainer />
           <CollapsableFilters />
         </div>
+        {/* <Footer /> */}
       </StyledApp>
     )
   }
@@ -29,8 +31,12 @@ class App extends Component {
 export default App;
 
 const StyledApp = styled.div`
-
-
+  width: 100%;
+  font-family: ${props => props.theme.mainFont};
+  
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   .sticky {
     background-color: white;
     position: sticky;
@@ -41,6 +47,7 @@ const StyledApp = styled.div`
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    flex: 1;
   }
   .app > div {
     margin-top: 15px;

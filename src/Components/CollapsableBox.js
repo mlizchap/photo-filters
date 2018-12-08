@@ -21,13 +21,13 @@ const Content = posed.div({
 // }
 
 class CollapsableBox extends React.Component {
-  state = { open: false };
+  state = { open: true };
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
   render() {
     return (
-      <StyledCollapsableBox>
+      <StyledCollapsableBox {...this.props}>
         <h2 className="sectionTitle" onClick={this.toggleOpen}>
           {this.props.title}
         </h2>
@@ -45,9 +45,11 @@ export default CollapsableBox;
 const StyledCollapsableBox = styled.div`
     .sectionTitle {
         cursor: pointer;
-        background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
+        background: ${props => props.tint ? props.theme.tints.main : props => props.filter ? props.theme.filters.main : "pink" };
+        // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
         padding: 8px 0px;
         text-align: center;
+        font-family: ${props => props.theme.mainFont};
         // border-bottom: 1px solid #9f0092;
         margin-bottom: 0;
         font-size: 12px;
@@ -58,6 +60,7 @@ const StyledCollapsableBox = styled.div`
         overflow: hidden;
 
         color: white;
-        background: rgba(0, 0, 0, 0.8);
+        background: ${props => props.theme.darkBg}
+        //background: rgba(0, 0, 0, 0.8);
       }
 `

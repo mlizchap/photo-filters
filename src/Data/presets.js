@@ -1,7 +1,7 @@
 import { filters } from './filters';
 
 const bgDefaults = {
-    type: "gradient",
+    type: "none",
     solid: {
         color: "#4978F7",
         opacity: .5,
@@ -76,7 +76,8 @@ export const presetInfo = {
             solid: {
                 ...bgDefaults.solid,
                 color: "rgba(229, 240, 128)",
-                blendMode: "darken"
+                blendMode: "darken",
+                opacity: 0
             }
         }
     },

@@ -25,16 +25,19 @@ class BackgroundContainer extends Component {
                             <div>
                                 <div className="bgTypeButtons">
                                     <button 
+                                        className={(type === "solid") ? "selected" : "notSelected"}
                                         onClick={(e) => this.changeBg(e, context)}
                                     >
                                             solid
                                     </button>
                                     <button 
+                                        className={(type === "gradient") ? "selected" : "notSelected"}
                                         onClick={(e) => this.changeBg(e, context)}
                                     >
                                             gradient
                                     </button>
                                     <button 
+                                        className={(type === "none") ? "selected" : "notSelected"}
                                         onClick={(e) => this.changeBg(e, context)}
                                     >
                                         none
@@ -61,12 +64,37 @@ const StyledBackgroundContainer = styled.div`
     .bgTypeButtons {
         display: flex;
         // padding-top: 15px;
-        padding-bottom: 15px;
+        // padding-bottom: 15px;
         justify-content: space-around;
+
+    }
+    .bgTypeButtons button {
+        font-family: inherit;
+        font-weight: bold;
+        padding: 4px;
+        width: 70px;
+        border-radius: ${props => props.theme.borderRadius};
+    }
+    .selected {
+        background-color: ${props => props.theme.highlight};
+        border: 1px solid ${props => props.theme.tints.highlightDark};
+        color: ${props => props.theme.tints.highlightDark};
+    }
+    .notSelected {
+        background-color: ${props => props.theme.tints.light};
+        border: 1px solid ${props => props.theme.tints.dark};
+        color: ${props => props.theme.tints.dark};
+        &:hover {
+            cursor: pointer;
+            background-color: ${props => props.theme.tints.hovered};
+        }
     }
     .typeSection {
+        // padding-top: 15px;
+
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        backgrouond-color:
     }
 `

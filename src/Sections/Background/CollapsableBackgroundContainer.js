@@ -8,10 +8,14 @@ class CollapsableBackgroundContainer extends Component {
         this.state = {  };
     }
     render() {
+        console.log(this.props.theme)
         return (
             <CollapsableBox 
+                tint={true}
+                color={props => props.theme.tints.main}
                 title="TINT"
                 content={<BackgroundContainer />}    
+                {...this.props}
             />
             
         );

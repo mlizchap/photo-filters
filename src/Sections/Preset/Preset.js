@@ -8,15 +8,25 @@ class Preset extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            showContent: false
+            currentItem: "none",
+            showContent: false,
+            
          };
     }
     toggleContent = () => {
         this.setState({ showContent: !this.state.showContent})
     }
     selectItem = (key, context) => {
-        context.selectPreset(key)
+        context.selectPreset(key);
+        this.setState({ currentItem: key});
         this.toggleContent();
+    }
+    hoverItem = (key, context) => {
+        context.selectPreset(key)
+    }
+    mouseLeaveItem = (context) => {
+        context.selectPreset(this.state.currentItem);
+        console.log(this.state.currentItem)
     }
     render() {
         return (
@@ -26,7 +36,10 @@ class Preset extends Component {
                         return (
                             <StyledPresetSection>
                                 <div onMouseLeave={() => this.setState({ showContent: false })}>
-                                    <button onClick={this.toggleContent}>{context.state.presetInfo.name}</button>
+                                    <button onClick={this.toggleContent}>
+                                        <span className="btnText">{context.state.presetInfo.name.toUpperCase()}</span>
+                                        <span className="btnArrow">&#9660;</span>
+                                    </button>
                                     <div 
                                         className="content" 
                                         style={{ display: (this.state.showContent) ?  "block" : "none" }}
@@ -36,7 +49,10 @@ class Preset extends Component {
                                             <div 
                                                 className="item"
                                                 key={key}
-                                                onClick={() => this.selectItem(key, context)}>
+                                                onClick={() => this.selectItem(key, context)}
+                                                onMouseEnter={() => this.hoverItem(key, context)}
+                                                onMouseLeave={() => this.mouseLeaveItem(context)}
+                                            >
                                                 {key}
                                             </div>
 
@@ -57,19 +73,45 @@ export default Preset;
 const StyledPresetSection = styled.div`
     display: flex;
     justify-content: center;
-    // background-color: orange;
     width: 100%;
     .content {
         position: absolute;
         width: 150px;
+        font-family: ${props => props.theme.mainFont};
     }
     button {
         width: 150px;
+        padding: 3px;
+        border: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: ${props => props.theme.presets.dark};
+        background-color: ${props => props.theme.presets.main};
+        font-family: ${props => props.theme.titleFont};
+        // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
+        border-radius: ${props => props.theme.borderRadius};
+        font-size: 10pt;
+        &:hover {
+            cursor: pointer;
+            background-color: ${props => props.theme.presets.hovered};
+
+        }
+    }
+    .btnText {
+        padding-left: 22px;
+    }
+    .btnArrow {
+        padding-right: 5px;
+        float: right;
     }
     .item {
-        background-color: blue;
+        background-color: ${props => props.theme.presets.light};
+        padding: 5px;
+        font-size: 9pt;
+        color: ${props => props.theme.dark};
         &:hover {
-            background-color: lightblue;
+            background-color: ${props => props.theme.presets.highlighted};
+            color: ${props => props.theme.presets.light};
         }
     }
 `

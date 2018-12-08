@@ -38,7 +38,6 @@ class BlendmodeSelect extends Component {
                                         onClick={() => this.selectItem(key, context)}>
                                         {key}
                                     </div>
-
                                 )
                             })}
                             </div>

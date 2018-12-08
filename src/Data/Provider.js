@@ -163,6 +163,10 @@ class MyProvider extends Component {
         })
     }
 
+    changeBackToCurrentPreset = (current) => {
+        this.setState({ presetInfo: presetInfo[current] })
+    }
+
     render() {
         return (
             <MyContext.Provider 
@@ -178,7 +182,8 @@ class MyProvider extends Component {
                     changeOuterGradientColor: this.changeOuterGradientColor,
                     changeGradientOpacity: this.changeGradientOpacity,
                     selectBlendMode: this.selectBlendMode,
-                    changeBgType: this.changeBgType
+                    changeBgType: this.changeBgType,
+                    changeBackToCurrentPreset: this.changeBackToCurrentPreset
                 }}
             >
                 {this.props.children}

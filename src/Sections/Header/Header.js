@@ -9,7 +9,7 @@ class Header extends Component {
     render() {
         return (
             <StyledHeader>
-                Photo Filters
+                <h4>PHOTO FILTERS</h4>
             </StyledHeader>
         );
     }
@@ -19,9 +19,19 @@ export default Header;
 
 const StyledHeader = styled.div`
     width: 100%;
-    background-color: black;
+    background-color: ${props => props.theme.darkBg};
     color: white;
     text-align: center;
-    padding: 10px;
-    font-size: 18pt;
+    
+    padding: 10px 0;
+    font-size: 24pt;
+    font-family: ${props => props.theme.titleFont};
+    h4{
+        padding: 0px;
+        margin: 0;
+        background: linear-gradient(to right, ${props => props.theme.presets.main} 0%, ${props => props.theme.tints.main} 50%, ${props => props.theme.filters.main} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: .1rem;
+    }
 `
