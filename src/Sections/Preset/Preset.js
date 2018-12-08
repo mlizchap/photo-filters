@@ -91,6 +91,8 @@ const StyledPresetSection = styled.div`
         // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
         border-radius: ${props => props.theme.borderRadius};
         font-size: 10pt;
+        letter-spacing: .1rem;
+
         &:hover {
             cursor: pointer;
             background-color: ${props => props.theme.presets.hovered};

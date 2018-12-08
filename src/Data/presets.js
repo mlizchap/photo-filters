@@ -30,27 +30,27 @@ export const presetInfo = {
         },
         background: bgDefaults
     },
-    "night vision": {
-        name: "night vision",
-        filters: filters,
-        background: {
-            ...bgDefaults,
-            type: "gradient",
-            gradient: {
-                ...bgDefaults.gradient,
-                inner: {
-                    color: '#0F0',
-                    amount: 0
-                },
-                outer: {
-                    color: '#000',
-                    amount: 80
-                },
-                blendMode: "multiply"
-            },
+    // "night vision": {
+    //     name: "night vision",
+    //     filters: filters,
+    //     background: {
+    //         ...bgDefaults,
+    //         type: "gradient",
+    //         gradient: {
+    //             ...bgDefaults.gradient,
+    //             inner: {
+    //                 color: '#0F0',
+    //                 amount: 0
+    //             },
+    //             outer: {
+    //                 color: '#000',
+    //                 amount: 80
+    //             },
+    //             blendMode: "multiply"
+    //         },
             
-        }
-    },
+    //     }
+    // },
     1977: {
         name: "1977",
         filters: {

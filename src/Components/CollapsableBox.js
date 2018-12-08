@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import posed from "react-pose";
 import styled from "styled-components";
 
@@ -7,21 +7,9 @@ const Content = posed.div({
   open: { height: "auto" }
 });
 
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <Fragment>
-//         <h1>Accordian demo</h1>
-//         <Example content="something" />
-//         <br />
-//         <Example content="something else" />
-//       </Fragment>
-//     );
-//   }
-// }
 
 class CollapsableBox extends React.Component {
-  state = { open: true };
+  state = { open: false };
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
@@ -45,14 +33,16 @@ export default CollapsableBox;
 const StyledCollapsableBox = styled.div`
     .sectionTitle {
         cursor: pointer;
-        background: ${props => props.tint ? props.theme.tints.main : props => props.filter ? props.theme.filters.main : "pink" };
-        // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
+        background: ${props => props.tint ? props.theme.tints.main : (props.filter) ? props.theme.filters.main : "pink" };
+        color: ${props => props.tint ? props.theme.tints.dark : props.filter ? props.theme.filters.dark : "pink" };
+
         padding: 8px 0px;
         text-align: center;
-        font-family: ${props => props.theme.mainFont};
-        // border-bottom: 1px solid #9f0092;
+        font-family: ${props => props.theme.titleFont};
         margin-bottom: 0;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: .1rem;
     }
     .sectionContent {
         margin-top: 0;

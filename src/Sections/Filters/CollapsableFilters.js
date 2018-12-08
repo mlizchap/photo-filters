@@ -10,7 +10,7 @@ class CollapsableFilters extends Component {
     render() {
         return (
             <CollapsableBox 
-                filter
+                filter="true"
                 content={<Filters />}
                 title="FILTERS"
             />

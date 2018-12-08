@@ -7,7 +7,7 @@ import './App.css';
 import CollapsableFilters from '../Sections/Filters/CollapsableFilters';
 import CollapsableBackgroundContainer from '../Sections/Background/CollapsableBackgroundContainer';
 import Header from '../Sections/Header/Header';
-import Footer from '../Sections/Footer/Footer';
+// import Footer from '../Sections/Footer/Footer';
 
 class App extends Component {
   render() {
