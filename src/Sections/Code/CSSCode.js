@@ -25,10 +25,17 @@ class CSSCode extends Component {
     }
     renderBackgroundOpacity = (opacity) => {
         const imageOpacity = 1 - opacity;
-        return (Number(opacity) !== 1) ?  <div className="prop">opacity: {this.round(imageOpacity, 2)}</div> : null
+        return (Number(opacity) !== 1) ?  <div className="prop">opacity: {this.round(imageOpacity, 2)};</div> : null
     }
     renderMixBlend = (mixBlendMode) => {
-        return (mixBlendMode !== "normal") ? <div className="prop">mix-blend-mode: {mixBlendMode}</div> : null
+        return (mixBlendMode !== "normal") ? <div className="prop">mix-blend-mode: {mixBlendMode};</div> : null
+    }
+    renderGradientBackground = (inner, outer) => {
+        console.log(inner, outer)
+        return <div className="prop">background-image: radial-gradient({inner.color} {Math.round(inner.amount)}%, {outer.color} {Math.round(outer.amount)}%);</div>
+    }
+    renderSolidBackground = (color) => {
+        return <div className="prop">background-color: {color};</div>
     }
     render() {
         return (
@@ -51,6 +58,13 @@ class CSSCode extends Component {
                                         : null 
                                     }
                                 &#125;
+
+                                <div>
+                                .tint &#123;
+                                    { (currentType === "gradient") ? this.renderGradientBackground(gradient.inner, gradient.outer) : null } 
+                                    { (currentType === "solid") ? this.renderSolidBackground(solid.color) : null }
+                                &#125;
+                                </div>
 
                             </div>
                         )
