@@ -87,9 +87,9 @@ const StyledApp = styled.div`
   .mainContent_desktop {
     display: flex;
     max-width: 1000px;
-    margin: 50px auto; 
+    margin: 30px auto; 
     background-color: ${props => props.theme.lightestBg};
-    padding: 30px;
+    padding: 20px;
     border-radius: ${props => props.theme.borderRadius};
   }
   .leftColumn {
@@ -97,6 +97,10 @@ const StyledApp = styled.div`
     flex-direction: column;
     margin-right: 30px;
     width: ${props => props.isMobileView ? '100%' : '400px'};
+    justify-content: space-around;
+  }
+  .rightColumn > div, .leftColumn > div {
+    margin-bottom: 10px;
   }
   .rightColumn {
     width: 50%;
