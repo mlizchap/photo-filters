@@ -31,6 +31,9 @@ export const theme = {
     filters: {
         main: '#AD93F0', // purple
         dark: '#3E326E',
+        highlighted: '#73639b',
+        hovered: '#c1aeef',
+        light: '#eeeaf7',
     },
     highlight: '#f7edc3',
     highlightDark: '#e0a06b',

@@ -26,7 +26,6 @@ class Preset extends Component {
     }
     mouseLeaveItem = (context) => {
         context.selectPreset(this.state.currentItem);
-        console.log(this.state.currentItem)
     }
     render() {
         return (

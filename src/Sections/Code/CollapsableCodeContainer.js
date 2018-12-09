@@ -14,7 +14,6 @@ class CollapsableCodeContainer extends Component {
         return (
             <MyContext.Consumer>
                 {context => {
-                    console.log(context.state.mobileView)
                     return (
                         <div>
                             <StyledCodeSection mobile={context.state.isMobileWidth}>

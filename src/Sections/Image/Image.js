@@ -26,8 +26,8 @@ class Image extends Component {
                             <div
                                 className="tint"
                                 style={{ 
-                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
-                                    backgroundColor: (background.type === "solid") ? background.solid.color : "rgba(1, 1, 1, 0)" 
+                                    backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "white",
+                                    backgroundColor: (background.type === "solid") ? background.solid.color : "white" 
                                 }}
                             >
                                 <img 

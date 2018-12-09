@@ -9,6 +9,7 @@ import CollapsableFilters from '../Sections/Filters/CollapsableFilters';
 import CollapsableBackgroundContainer from '../Sections/Background/CollapsableBackgroundContainer';
 import Header from '../Sections/Header/Header';
 import CollapsableCodeContainer from '../Sections/Code/CollapsableCodeContainer';
+import DropdownMenu from '../Components/DropdownMenu';
 // import Footer from '../Sections/Footer/Footer';
 
 class App extends Component {

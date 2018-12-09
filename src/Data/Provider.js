@@ -14,9 +14,9 @@ class MyProvider extends Component {
     }
 
     updateDimensions = (windowSize) => {
-        if (windowSize < 1000) {
+        if (windowSize < 800) {
             this.setState({ isMobileWidth: true })
-        } else if (windowSize > 1000){
+        } else {
             this.setState({ isMobileWidth: false })
         }
         
