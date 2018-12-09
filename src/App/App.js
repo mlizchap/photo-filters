@@ -12,23 +12,6 @@ import CollapsableCodeContainer from '../Sections/Code/CollapsableCodeContainer'
 // import Footer from '../Sections/Footer/Footer';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      windowSize: ""
-    }
-  }
-
-  updateDimensions = (windowSize) => {
-    this.setState({ windowSize })
-  }
-
-  componentDidMount = () => {
-    window.addEventListener("resize", () => this.updateDimensions(window.innerWidth) );
-  }
-  componentWillMount = () => {
-    this.updateDimensions(window.innerWidth) 
-  }
 
   renderDesktopView = () => {
     return (
@@ -67,8 +50,8 @@ class App extends Component {
           return (
             <StyledApp>
               <Header />
-                { (context.state.windowSize > 1080) ? 
-                    this.renderDesktopView() : this.renderMobileView() 
+                { (context.state.mobileView) ? 
+                    this.renderMobileView() : this.renderDesktopView() 
                 }
               {/* <Footer />  */}
             </StyledApp>
