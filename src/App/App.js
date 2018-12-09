@@ -85,15 +85,17 @@ const StyledApp = styled.div`
   // DESKTOP VIEW
   .mainContent_desktop {
     display: flex;
-    margin: 50px 100px; 
+    max-width: 1000px;
+    margin: 50px auto; 
+    background-color: ${props => props.theme.lightestBg};
+    padding: 30px;
+    border-radius: ${props => props.theme.borderRadius};
   }
   .leftColumn {
     display: flex;
     flex-direction: column;
     margin-right: 30px;
     width: ${props => props.isMobileView ? '100%' : '400px'};
-    // justify-content: space-between;
-    margin: 30px 30px;
   }
   .rightColumn {
     width: 50%;

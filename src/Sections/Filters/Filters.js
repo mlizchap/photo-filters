@@ -24,33 +24,16 @@ class Filters extends Component {
             <StyledFilterSection>
                 <MyContext.Consumer>
                     {(context) => {
-                        // const filters = context.state.presetInfo.filters
-                        // return (
-                            // <div>
-                            //     {Object.keys(context.state.presetInfo.filters).map((key, index) => {
-                            //        return (  
-                            //            <div>
-                            //             <div className="leftCol">
-                            //                 {(index < 3) ? this.renderSlider(context, key) : null}
-                            //             </div>
-                            //             <div className="rightCol">
-                            //                 {(index > 3) ? this.renderSlider(context, key) : null}
-                            //             </div>  
-                            //             </div>
-                            //        )
-                            //     })}
-                            // </div>
-                            return (
-                                <StyledFilterSection>
-                                    <div className="leftCol">
-                                        {Object.keys(context.state.presetInfo.filters).map((key, index) => (index <= 3) ? this.renderSlider(context, key) : null)}
-                                    </div>
-                                    <div className="rightCol">
-                                        {Object.keys(context.state.presetInfo.filters).map((key, index) => (index >= 4) ? this.renderSlider(context, key) : null)}
-                                    </div>
-                                </StyledFilterSection>
-                            )
-
+                        return (
+                            <StyledFilterSection>
+                                <div className="leftCol">
+                                    {Object.keys(context.state.presetInfo.filters).map((key, index) => (index <= 3) ? this.renderSlider(context, key) : null)}
+                                </div>
+                                <div className="rightCol">
+                                    {Object.keys(context.state.presetInfo.filters).map((key, index) => (index >= 4) ? this.renderSlider(context, key) : null)}
+                                </div>
+                            </StyledFilterSection>
+                        )
                     }}
                 </MyContext.Consumer>
             </StyledFilterSection>

@@ -9,6 +9,7 @@ export const theme = {
     // colors
     lightBg: '#424242',
     darkBg: '#1A222A',
+    lightestBg: '#3b4149',
     dark: '#474747',
     presets: {
         main: '#6CFFC2', // green
