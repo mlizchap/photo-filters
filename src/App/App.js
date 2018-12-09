@@ -92,7 +92,7 @@ const StyledApp = styled.div`
     flex-direction: column;
     margin-right: 30px;
     width: ${props => props.isMobileView ? '100%' : '400px'};
-    justify-content: space-between;
+    // justify-content: space-between;
     margin: 30px 30px;
   }
   .rightColumn {

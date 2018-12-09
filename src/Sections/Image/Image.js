@@ -55,7 +55,6 @@ export default Image;
 
 const StyledImage = styled.div`
     display: inline-block;
-    background-color: blue;
     margin-right: auto;
     margin-left: auto;
     .tint {
