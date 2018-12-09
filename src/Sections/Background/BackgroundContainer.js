@@ -63,7 +63,8 @@ const StyledBackgroundContainer = styled.div`
     height: 165px;
     // background: red;
     margin: 0 10px;
-    padding-bottom: 10px;
+
+    padding-bottom: 15px;
     .bgTypeButtons {
         display: flex;
         justify-content: space-around;
@@ -91,7 +92,7 @@ const StyledBackgroundContainer = styled.div`
     }
     .typeSection {
         // padding-top: 15px;
-        // margin-top: 5px;
+        margin-top: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
