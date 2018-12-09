@@ -17,11 +17,11 @@ class GradientBackground extends Component {
                 {context => {
                     const { inner, outer, blendMode, opacity} = context.state.presetInfo.background.gradient;
                     return (
-                        <StyledGradientBackground>
+                        <StyledGradientBackground isMobile={context.state.isMobileWidth}>
                             <div className="colorSection">
-                                <div className="description">
-                                    <p>inner:</p>
-                                </div>
+                               
+                                    { !context.state.isMobileWidth ?  <div className="description"><p>outer:</p></div> : null }
+                                
 
                                 <div className="colorPicker">
                                     <ColorPicker 
@@ -44,9 +44,8 @@ class GradientBackground extends Component {
                             </div>
                             
                             <div className="colorSection">
-                                <div className="title">
-                                    <p>outer:</p>
-                                </div>
+                            { !context.state.isMobileWidth ?  <div className="description"><p>inner:</p></div> : null }
+
                                 <div className="colorPicker">
                                     <ColorPicker 
                                         color={outer.color}
@@ -93,8 +92,11 @@ class GradientBackground extends Component {
 export default GradientBackground;
 
 const StyledGradientBackground = styled.div`
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     // background-color: orange;
-    padding: 15px;
     padding-bottom: 0px;
     p {
         font-size: 10pt;
@@ -107,9 +109,11 @@ const StyledGradientBackground = styled.div`
     }
     .colorSection {
         display: flex;
-        justify-content: space-around;
+        // justify-content: space-around;
+        
     }
-    .colorSection > div {
+    
+    .colorSection > div, .bottomRow > div {
         padding-right: 10px;
         padding-left: 10px;
     }
@@ -118,13 +122,13 @@ const StyledGradientBackground = styled.div`
         justify-content: space-around;
     }
     .blendMode {
-        padding-right: 10px;
-        padding-left: 10px;
+        // padding-right: 10px;
+        // padding-left: 10px;
         padding-top: 10px;
     }
     .opacitySlider {
         flex-grow: 1;
-        padding-right: 10px;
-        padding-left: 10px;
+        // padding-right: 10px;
+        // padding-left: 10px;
     }
 `

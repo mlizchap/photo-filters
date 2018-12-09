@@ -59,8 +59,11 @@ export default BackgroundContainer;
 
 const StyledBackgroundContainer = styled.div`
     // background-color: lightgreen;
-    width: 100%;
-    // padding-bottom: 10px;
+    // width: 100%;
+    height: 165px;
+    // background: red;
+    margin: 0 10px;
+    padding-bottom: 10px;
     .bgTypeButtons {
         display: flex;
         justify-content: space-around;
@@ -88,7 +91,7 @@ const StyledBackgroundContainer = styled.div`
     }
     .typeSection {
         // padding-top: 15px;
-
+        // margin-top: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;

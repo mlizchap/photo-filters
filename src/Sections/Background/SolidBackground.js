@@ -53,11 +53,13 @@ export default SolidBackground;
 const StyledSolidBackground = styled.div`
     // padding-bottom: 10px;
     padding-top: 15px;
-
+    align-items: center;
     .solidDetails {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        height: 145px;
+
     }
     .topRow {
         display: flex;
