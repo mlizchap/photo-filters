@@ -19,13 +19,15 @@ export default Footer;
 
 const StyledFooter = styled.div`
     margin: auto auto 0 auto;
-    position:fixed;
+    //position:fixed;
     bottom:0;
     left:0;
     right:0;
-    padding: 5px;
-    // height: 20px;
     color: white;
-    margin-top: 20px;
-    background-color: #38405e;
+    text-align: center;
+    font-size: 8pt;
+    width: 100%;
+    padding: 10px;
+    background-color: ${props => props.theme.darkBg};
+    font-family: ${props => props.theme.mainFont};
 `

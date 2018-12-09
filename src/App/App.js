@@ -9,8 +9,7 @@ import CollapsableFilters from '../Sections/Filters/CollapsableFilters';
 import CollapsableBackgroundContainer from '../Sections/Background/CollapsableBackgroundContainer';
 import Header from '../Sections/Header/Header';
 import CollapsableCodeContainer from '../Sections/Code/CollapsableCodeContainer';
-import DropdownMenu from '../Components/DropdownMenu';
-// import Footer from '../Sections/Footer/Footer';
+import Footer from '../Sections/Footer/Footer';
 
 class App extends Component {
 
@@ -53,7 +52,7 @@ class App extends Component {
                 { (context.state.isMobileWidth) ? 
                     this.renderMobileView() : this.renderDesktopView() 
                 }
-              {/* <Footer />  */}
+              <Footer /> 
             </StyledApp>
           )
         }}
@@ -97,7 +96,7 @@ const StyledApp = styled.div`
     flex-direction: column;
     margin-right: 30px;
     width: ${props => props.isMobileView ? '100%' : '400px'};
-    justify-content: space-around;
+    // justify-content: space-around;
   }
   .rightColumn > div, .leftColumn > div {
     margin-bottom: 10px;
