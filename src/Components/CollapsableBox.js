@@ -9,7 +9,7 @@ const Content = posed.div({
 
 
 class CollapsableBox extends React.Component {
-  state = { open: false };
+  state = { open: true };
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
@@ -33,8 +33,12 @@ export default CollapsableBox;
 const StyledCollapsableBox = styled.div`
     .sectionTitle {
         cursor: pointer;
-        background: ${props => props.tint ? props.theme.tints.main : (props.filter) ? props.theme.filters.main : "pink" };
-        color: ${props => props.tint ? props.theme.tints.dark : props.filter ? props.theme.filters.dark : "pink" };
+        background: ${props => props.tint ? props.theme.tints.main : 
+                        (props.filter) ? props.theme.filters.main : 
+                          (props.code) ? props.theme.code.main : "green" };
+        color: ${props => props.tint ? props.theme.tints.dark : 
+                  props.filter ? props.theme.filters.dark : 
+                    props.code ? props.theme.code.dark : "pink" };
 
         padding: 8px 0px;
         text-align: center;

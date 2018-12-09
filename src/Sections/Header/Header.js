@@ -29,7 +29,7 @@ const StyledHeader = styled.div`
     h4{
         padding: 0px;
         margin: 0;
-        background: linear-gradient(to right, ${props => props.theme.presets.main} 0%, ${props => props.theme.tints.main} 50%, ${props => props.theme.filters.main} 100%);
+        background: linear-gradient(to right, ${props => props.theme.presets.main} 0%, ${props => props.theme.tints.main} 50%, ${props => props.theme.code.main} 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: .1rem;

@@ -63,10 +63,7 @@ const StyledBackgroundContainer = styled.div`
     // padding-bottom: 10px;
     .bgTypeButtons {
         display: flex;
-        // padding-top: 15px;
-        // padding-bottom: 15px;
         justify-content: space-around;
-
     }
     .bgTypeButtons button {
         font-family: inherit;

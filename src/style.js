@@ -23,9 +23,13 @@ export const theme = {
         light: '#c4e5fc',
         dark: '#0c3f63',
     },
-    filters: {
+    code: {
         main: '#f9b1d8', //pink
         dark: '#6d3050'
+    },
+    filters: {
+        main: '#AD93F0', // purple
+        dark: '#3E326E',
     },
     highlight: '#f7edc3',
     highlightDark: '#e0a06b',
