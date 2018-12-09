@@ -18,8 +18,10 @@ class CSSCode extends Component {
             }
             
         })
-        return (filterStr) ? filterStr : null;
-        
+        return (filterStr) ? `filters: ${filterStr.trim()};` : null;
+    }
+    renderBackground = (context) => {
+
     }
     render() {
         return (
@@ -27,10 +29,13 @@ class CSSCode extends Component {
                 <MyContext.Consumer>
                     {context => {
                         const filterArr = Object.keys(context.state.presetInfo.filters);
-
+                        
                         return (
                             <div>
-                                {this.renderFilters(filterArr, context)}
+                                .image &#123;
+                                    <div className="prop">{this.renderFilters(filterArr, context)}</div>
+                                &#125;
+                                {this.renderBackground(context)}
                             </div>
                         )
                     }}
@@ -45,4 +50,9 @@ export default CSSCode;
 const StyledCSSCode = styled.div`
     padding: 20px;
     font-family: monospace;
+    font-size: 9pt;
+    .prop {
+        padding-left: 20px;
+        color: ${props => props.theme.tints.light};
+    }
 `

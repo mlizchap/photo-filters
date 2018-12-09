@@ -31,6 +31,7 @@ class CollapsableBox extends React.Component {
 export default CollapsableBox;
 
 const StyledCollapsableBox = styled.div`
+    
     .sectionTitle {
         cursor: pointer;
         background: ${props => props.tint ? props.theme.tints.main : 
@@ -49,6 +50,7 @@ const StyledCollapsableBox = styled.div`
         letter-spacing: .1rem;
     }
     .sectionContent {
+        overflow: scroll;
         margin-top: 0;
         padding-top: 0;
         overflow: hidden;

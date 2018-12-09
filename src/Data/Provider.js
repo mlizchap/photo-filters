@@ -7,9 +7,20 @@ class MyProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            windowSize: 600,
             presetName: "none",
             presetInfo: presetInfo.none
         }
+    }
+
+    updateDimensions = (windowSize) => {
+        this.setState({ windowSize })
+    }    
+    componentDidMount = () => {
+        window.addEventListener("resize", () => this.updateDimensions(window.innerWidth) );
+    }
+    componentWillMount = () => {
+        this.updateDimensions(window.innerWidth);
     }
 
     changeValue = (value, name) => {
