@@ -76,6 +76,7 @@ const StyledApp = styled.div`
     margin-right: auto;
     margin-left: auto;
     flex: 1;
+    max-width: 500px;
   }
   .mainContent > div {
     margin-top: 15px;
@@ -87,7 +88,7 @@ const StyledApp = styled.div`
     display: flex;
     max-width: 1000px;
     margin: 30px auto; 
-    background-color: ${props => props.theme.lightestBg};
+    // background-color: ${props => props.theme.lightestBg};
     padding: 20px;
     border-radius: ${props => props.theme.borderRadius};
   }

@@ -9,6 +9,9 @@ class CSSCode extends Component {
         super(props);
         this.state = {  };
     }
+    round = (value, decimals) => {
+        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    }
     renderFilters = (filters, context) => {
         let filterObj = context.state.presetInfo.filters;
         let filterStr = ""
@@ -20,22 +23,35 @@ class CSSCode extends Component {
         })
         return (filterStr) ? `filters: ${filterStr.trim()};` : null;
     }
-    renderBackground = (context) => {
-
+    renderBackgroundOpacity = (opacity) => {
+        const imageOpacity = 1 - opacity;
+        return (Number(opacity) !== 1) ?  <div className="prop">opacity: {this.round(imageOpacity, 2)}</div> : null
+    }
+    renderMixBlend = (mixBlendMode) => {
+        return (mixBlendMode !== "normal") ? <div className="prop">mix-blend-mode: {mixBlendMode}</div> : null
     }
     render() {
         return (
             <StyledCSSCode>
                 <MyContext.Consumer>
                     {context => {
+                        const currentType = context.state.presetInfo.background.type
                         const filterArr = Object.keys(context.state.presetInfo.filters);
-                        
+                        const {solid,gradient} = context.state.presetInfo.background;
                         return (
                             <div>
                                 .image &#123;
                                     <div className="prop">{this.renderFilters(filterArr, context)}</div>
+                                    {(currentType === "solid")  ? this.renderBackgroundOpacity(solid.opacity)
+                                        : (currentType === "gradient") ?  this.renderBackgroundOpacity(gradient.opacity) 
+                                        : null 
+                                    }
+                                    {(currentType === "solid")  ? this.renderMixBlend(solid.blendMode)
+                                        : (currentType === "gradient") ?  this.renderMixBlend(gradient.blendMode) 
+                                        : null 
+                                    }
                                 &#125;
-                                {this.renderBackground(context)}
+
                             </div>
                         )
                     }}
