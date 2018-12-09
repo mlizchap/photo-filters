@@ -40,36 +40,42 @@ class CSSCode extends Component {
             <div className="indented">
                 <span className="prop">filter</span>
                 :&nbsp;{filterArr.flat()}
-            </div> 
-            : null
-
-        // return <div />
-
-        // let filterStr = "<div>"
-        // filters.forEach(filter => {
-        //     if (filterObj[filter].value !== defaultFilters[filter].value) {
-        //         filterStr += `<span className="prop">${filter}</span>(${filterObj[filter].value}) `
-        //     }
-        // })
-        // filterStr += "</div>"
-        // const parsedHTML =  (filterStr.length > 11) ? parser.parseFromString(filterStr, 'text/html') : "XX";
-        // //console.log((parsedHTML) ? parsedHTML.body.innerHTML : "X")
-        // console.log(filterStr.length)
-        // return (filterStr) ? <div><span className="selector">filters:</span> {(filterStr.length > 11) ? parsedHTML.body.innerHTML : `x`}</div> : null;
+            </div> : null
     }
     renderBackgroundOpacity = (opacity) => {
         const imageOpacity = 1 - opacity;
-        return (Number(opacity) !== 1) ?  <div className="prop">opacity: {this.round(imageOpacity, 2)};</div> : null
+        return (Number(opacity) !== 1) ?  
+            <div className="indented">
+                <span className="prop">opacity: </span>
+                <span className="value">{this.round(imageOpacity, 2)}</span>;
+            </div> : null
     }
     renderMixBlend = (mixBlendMode) => {
-        return (mixBlendMode !== "normal") ? <div className="prop">mix-blend-mode: {mixBlendMode};</div> : null
+        return (mixBlendMode !== "normal") ? 
+            <div className="indented">
+                <span className="prop">mix-blend-mode:&nbsp;</span> 
+                <span className="value">{mixBlendMode};</span> 
+            </div>: null
     }
     renderGradientBackground = (inner, outer) => {
         console.log(inner, outer)
-        return <div className="prop">background-image: radial-gradient({inner.color} {Math.round(inner.amount)}%, {outer.color} {Math.round(outer.amount)}%);</div>
+        return (
+            <div className="indented">
+                <span className="prop">background-image:</span> 
+                <span className="fn">&nbsp;radial-gradient(</span>
+                    <span className="value">{inner.color} {Math.round(inner.amount)}%</span>,&nbsp;
+                    <span className="value">{outer.color} {Math.round(outer.amount)}%</span>
+                <span className="fn">)</span>;
+            </div>
+        )
     }
     renderSolidBackground = (color) => {
-        return <div className="prop">background-color: {color};</div>
+        return (
+            <div className="indented">
+                 <span className="prop">background-color</span>:
+                 <span className="value">{color}</span>;
+            </div>
+        )        
     }
     render() {
         return (
@@ -98,8 +104,11 @@ class CSSCode extends Component {
                                 &#125;
 
                                 <div>
-                                .tint &#123;
-                                    <div className="prop">width: 300px;</div>
+                                <span className="selector">.tint&nbsp;</span>&#123;
+                                    <div className="indented">
+                                        <span className="prop">width</span>:
+                                        <span className="value">&nbsp;300px</span>;
+                                    </div>
                                     { (currentType === "gradient") ? this.renderGradientBackground(gradient.inner, gradient.outer) : null } 
                                     { (currentType === "solid") ? this.renderSolidBackground(solid.color) : null }
                                 &#125;
@@ -134,13 +143,14 @@ const StyledCSSCode = styled.div`
         color: ${props => props.theme.presets.main};
     }
     .value {
-        color: ${props => props.theme.tints.main};
+        color: ${props => props.theme.filters.code};
+        
     }
     .prop {
-        color: ${props => props.theme.code.main};
+        color: ${props => props.theme.code.light};
     }
     .fn {
-        color: ${props => props.theme.filters.code};
+        color: ${props => props.theme.tints.main};
     }
 
 `
