@@ -26,11 +26,13 @@ class Image extends Component {
                             <div
                                 className="tint"
                                 style={{ 
-                                    width: "60%", 
                                     backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
                                     backgroundColor: (background.type === "solid") ? background.solid.color : "rgba(1, 1, 1, 0)" 
                                 }}
-                            ><img 
+                            >
+                                <img 
+                    
+
                                     src={`${image}`} 
                                     style={{
                                             filter: this.getFilterValues(context),
@@ -52,10 +54,15 @@ class Image extends Component {
 export default Image;
 
 const StyledImage = styled.div`
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    background-color: blue;
+    margin-right: auto;
+    margin-left: auto;
     .tint {
         //padding-bottom: -13px;
         line-height: 0;
+    }
+    img {
+
     }
 `

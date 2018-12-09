@@ -37,7 +37,7 @@ class CollapsableCodeContainer extends Component {
 export default CollapsableCodeContainer;
 
 const StyledCodeSection = styled.div`
-    width: ${props => props.mobile ? `100%` : `60%` };
+    width: ${props => props.mobile ? `100%` : `100%` };
     margin-right: auto; 
     margin-left: auto;
 `

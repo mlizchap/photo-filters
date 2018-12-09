@@ -47,7 +47,7 @@ class App extends Component {
       <MyContext.Consumer>
         {context => {
           return (
-            <StyledApp>
+            <StyledApp isMobileWidth={context.state.isMobileWidth}>
               <Header />
                 { (context.state.isMobileWidth) ? 
                     this.renderMobileView() : this.renderDesktopView() 
@@ -63,24 +63,11 @@ class App extends Component {
   }
 }
 
-        // // MOBILE VIEW       
-        // <div className="mainContent">
-        //   <Image />
-        //   <Preset />
-        //   <CollapsableBackgroundContainer />
-        //   <CollapsableFilters />
-        //   <CollapsableCodeContainer />
-        // </div>
-
-
-
-
-
 export default App;
 
 const StyledApp = styled.div`
   width: 100%;
-  font-family: ${props => props.theme.mainFont};
+  font-family: ${props => props.theme.isMobileWidth};
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -101,15 +88,18 @@ const StyledApp = styled.div`
     margin: 50px 100px; 
   }
   .leftColumn {
-    width: 50%;
-    margin-right: 60px;
     display: flex;
     flex-direction: column;
+    margin-right: 30px;
+    width: ${props => props.isMobileView ? '100%' : '400px'};
+    justify-content: space-between;
+    margin: 30px 30px;
   }
   .rightColumn {
     width: 50%;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
   }
 
 
