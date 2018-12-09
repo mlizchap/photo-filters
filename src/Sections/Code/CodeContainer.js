@@ -12,10 +12,10 @@ class CodeContainer extends Component {
     render() {
         return (
             <StyledCodeContainer>
-                <div className="buttonSection">
+                {/* <div className="buttonSection">
                     <button>HTML</button>
                     <button>CSS</button>
-                </div>
+                </div> */}
                 <CSSCode />
                 {/* <HTMLCode /> */}
             </StyledCodeContainer>

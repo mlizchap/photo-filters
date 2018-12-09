@@ -9,7 +9,8 @@ export const theme = {
     // colors
     lightBg: '#424242',
     darkBg: '#1A222A',
-    lightestBg: '#3b4149',
+    containerBg: '#394551',
+    // lightestBg: '#3b4149',
     dark: '#474747',
     presets: {
         main: '#6CFFC2', // green
@@ -26,7 +27,8 @@ export const theme = {
     },
     code: {
         main: '#f9b1d8', //pink
-        dark: '#6d3050'
+        dark: '#6d3050',
+        light: '#ffe0f0',
     },
     filters: {
         main: '#AD93F0', // purple
@@ -34,6 +36,7 @@ export const theme = {
         highlighted: '#73639b',
         hovered: '#c1aeef',
         light: '#eeeaf7',
+        code: '#e1d6ff'
     },
     highlight: '#f7edc3',
     highlightDark: '#e0a06b',

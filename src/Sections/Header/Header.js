@@ -9,7 +9,9 @@ class Header extends Component {
     render() {
         return (
             <StyledHeader>
-                <h4>PHOTO FILTERS</h4>
+                <div className="titleWrapper">
+                    <h4>PHOTO FILTERS</h4>
+                </div>
             </StyledHeader>
         );
     }
@@ -22,7 +24,11 @@ const StyledHeader = styled.div`
     background-color: ${props => props.theme.darkBg};
     color: white;
     text-align: center;
-    
+    .titleWrapper {
+        // background-color: red;
+        display: inline-block;
+        width: 250px;
+    }
     padding: 10px 0;
     font-size: 24pt;
     font-family: ${props => props.theme.titleFont};

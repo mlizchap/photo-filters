@@ -97,7 +97,7 @@ const StyledApp = styled.div`
     flex-direction: column;
     margin-right: 30px;
     width: ${props => props.isMobileView ? '100%' : '400px'};
-    // justify-content: space-around;
+    justify-content: flex-end;
   }
   .rightColumn > div, .leftColumn > div {
     margin-bottom: 10px;
