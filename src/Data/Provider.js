@@ -7,7 +7,7 @@ class MyProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mobileView: true,
+            isMobileWidth: true,
             presetName: "none",
             presetInfo: presetInfo.none
         }
@@ -15,9 +15,9 @@ class MyProvider extends Component {
 
     updateDimensions = (windowSize) => {
         if (windowSize < 1000) {
-            this.setState({ mobileView: true })
+            this.setState({ isMobileWidth: true })
         } else if (windowSize > 1000){
-            this.setState({ mobileView: false })
+            this.setState({ isMobileWidth: false })
         }
         
     }    

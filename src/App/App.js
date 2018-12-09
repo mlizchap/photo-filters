@@ -46,11 +46,10 @@ class App extends Component {
     return (
       <MyContext.Consumer>
         {context => {
-          console.log(context.state.windowSize)
           return (
             <StyledApp>
               <Header />
-                { (context.state.mobileView) ? 
+                { (context.state.isMobileWidth) ? 
                     this.renderMobileView() : this.renderDesktopView() 
                 }
               {/* <Footer />  */}

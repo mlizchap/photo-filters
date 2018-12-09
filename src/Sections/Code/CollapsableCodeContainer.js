@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+import { MyContext } from '../../Data/Provider';
 import CollapsableBox from '../../Components/CollapsableBox';
 import CodeContainer from './CodeContainer';
 
@@ -9,14 +12,32 @@ class CollapsableCodeContainer extends Component {
     }
     render() {
         return (
-            <CollapsableBox
-                code
-                title="CODE"
-                content={<CodeContainer />}
-                {...this.props}
-            />        
+            <MyContext.Consumer>
+                {context => {
+                    console.log(context.state.mobileView)
+                    return (
+                        <div>
+                            <StyledCodeSection mobile={context.state.isMobileWidth}>
+                                <CollapsableBox
+                                    code
+                                    title="CODE"
+                                    content={<CodeContainer />}
+                                    {...this.props}
+                                />        
+                            </StyledCodeSection>
+                        </div>
+                    )
+                }}
+            </MyContext.Consumer>
+
         );
     }
 }
 
 export default CollapsableCodeContainer;
+
+const StyledCodeSection = styled.div`
+    width: ${props => props.mobile ? `100%` : `60%` };
+    margin-right: auto; 
+    margin-left: auto;
+`

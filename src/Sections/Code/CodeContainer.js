@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import HTMLCode from './HTMLCode';
+// import HTMLCode from './HTMLCode';
 import CSSCode from './CSSCode';
 
 class CodeContainer extends Component {
@@ -12,10 +12,10 @@ class CodeContainer extends Component {
     render() {
         return (
             <StyledCodeContainer>
-            <div className="buttonSection">
-                <button>HTML</button>
-                <button>CSS</button>
-            </div>
+                <div className="buttonSection">
+                    <button>HTML</button>
+                    <button>CSS</button>
+                </div>
                 <CSSCode />
                 {/* <HTMLCode /> */}
             </StyledCodeContainer>
