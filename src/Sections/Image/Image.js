@@ -26,9 +26,9 @@ class Image extends Component {
                             <div
                                 className="tint"
                                 style={{ 
-                                    width: "100%", 
+                                    width: (context.state.isMobileWidth) ? '300px' : '100%',
                                     backgroundImage: (background.type === "gradient") ? `radial-gradient(${background.gradient.inner.color} ${background.gradient.inner.amount}%, ${background.gradient.outer.color} ${background.gradient.outer.amount}%)` : "none",
-                                    backgroundColor: (background.type === "solid") ? background.solid.color : "rgba(1, 1, 1, 0)" 
+                                    backgroundColor: (background.type === "solid") ? background.solid.color : "white" 
                                 }}
                             ><img 
                                     src={`${image}`} 
@@ -37,7 +37,8 @@ class Image extends Component {
                                             opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? 1 - background.gradient.opacity : 1,   
                                             mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
-                                    width="100%" 
+                                    width="100%"
+                                    //width={(context.state.isMobileWidth) ? '30%' : '100%'}
                                     alt="to edit" 
                                 />
                             </div>
