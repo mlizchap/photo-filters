@@ -5,42 +5,52 @@ import { MyContext } from '../../Data/Provider';
 import Slider from '../../Components/Slider';
 
 class Filters extends Component {
+    renderSlider = (context, key) => {
+        return (
+                <Slider 
+                    width="80%"
+                    value={context.state.presetInfo.filters[key].value}
+                    title={context.state.presetInfo.filters[key].name}
+                    min={context.state.presetInfo.filters[key].min}
+                    max={context.state.presetInfo.filters[key].max}
+                    step={context.state.presetInfo.filters[key].step}
+                    handleChange={(e) => context.changeValue(e.target.value, context.state.presetInfo.filters[key].name)}
+                />
+        )
+
+    }
     render() {
         return (
             <StyledFilterSection>
                 <MyContext.Consumer>
                     {(context) => {
-                        const filters = context.state.presetInfo.filters
-                        return (
-                            <div>
-                                {Object.keys(filters).map(key => {
-                                    return (
-                                        <div key={key}>
-                                            {/* {filters[key].name}:
-                                            <input 
-                                                type="range"
-                                                step={filters[key].step}
-                                                min={filters[key].min}
-                                                max={filters[key].max}
-                                                onChange={(e) => context.changeValue(e.target.value, filters[key].name)}
-                                                value={context.state.presetInfo.filters[key].value}
-                                            />
-                                            {filters[key].value} */}
+                        // const filters = context.state.presetInfo.filters
+                        // return (
+                            // <div>
+                            //     {Object.keys(context.state.presetInfo.filters).map((key, index) => {
+                            //        return (  
+                            //            <div>
+                            //             <div className="leftCol">
+                            //                 {(index < 3) ? this.renderSlider(context, key) : null}
+                            //             </div>
+                            //             <div className="rightCol">
+                            //                 {(index > 3) ? this.renderSlider(context, key) : null}
+                            //             </div>  
+                            //             </div>
+                            //        )
+                            //     })}
+                            // </div>
+                            return (
+                                <StyledFilterSection>
+                                    <div className="leftCol">
+                                        {Object.keys(context.state.presetInfo.filters).map((key, index) => (index <= 3) ? this.renderSlider(context, key) : null)}
+                                    </div>
+                                    <div className="rightCol">
+                                        {Object.keys(context.state.presetInfo.filters).map((key, index) => (index >= 4) ? this.renderSlider(context, key) : null)}
+                                    </div>
+                                </StyledFilterSection>
+                            )
 
-                                            <Slider 
-                                                width="80%"
-                                                value={context.state.presetInfo.filters[key].value}
-                                                title={filters[key].name}
-                                                min={filters[key].min}
-                                                max={filters[key].max}
-                                                step={filters[key].step}
-                                                handleChange={(e) => context.changeValue(e.target.value, filters[key].name)}
-                                            />
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        )
                     }}
                 </MyContext.Consumer>
             </StyledFilterSection>
@@ -52,4 +62,11 @@ export default Filters;
 
 const StyledFilterSection = styled.div`
     text-align: center;
+    display: flex;
+    .leftCol {
+        // background-color: lightgreen;
+    }
+    .rightCol {
+        // background-color: red;
+    }
 `
