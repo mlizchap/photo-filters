@@ -19,11 +19,9 @@ class CSSCode extends Component {
         let filterObj = context.state.presetInfo.filters;
         let filterArr = [];
         const filtersToDisplay = filters.filter(item => filterObj[item].value !== defaultFilters[item].value);
-        console.log(filtersToDisplay)
         
         if (filtersToDisplay.length > 0) {
             filtersToDisplay.forEach((filter,index) => {
-                console.log(index, filtersToDisplay.length)
                 if (filterObj[filter].value !== defaultFilters[filter].value) {
                     filterArr.push(
                         <span key={filter}>
@@ -44,7 +42,7 @@ class CSSCode extends Component {
     }
     renderBackgroundOpacity = (opacity) => {
         const imageOpacity = 1 - opacity;
-        return (Number(opacity) !== 1) ?  
+        return (Number(opacity) !== 0) ?  
             <div className="indented">
                 <span className="prop">opacity: </span>
                 <span className="value">{this.round(imageOpacity, 2)}</span>;
@@ -58,7 +56,6 @@ class CSSCode extends Component {
             </div>: null
     }
     renderGradientBackground = (inner, outer) => {
-        console.log(inner, outer)
         return (
             <div className="indented">
                 <span className="prop">background-image:</span> 

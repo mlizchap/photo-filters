@@ -33,7 +33,8 @@ export default Slider;
 const StyledSlider = styled.div`
     width: ${props => props.width};
     display: inline-block;
-    font-size: 9pt;
+    font-family: ${props => props.theme.titleFont};
+    font-size: ${props => props.large ? `12pt` : '9pt' };
     input {
         width: 100%;
     }

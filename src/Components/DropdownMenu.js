@@ -6,7 +6,6 @@ class DropdownMenu extends Component {
         super(props);
         this.state = { 
             currentItem: "",
-
             showContent: false,
          };
     }
@@ -18,13 +17,13 @@ class DropdownMenu extends Component {
         this.setState({ currentItem: key});
         this.toggleContent();
     }
-    // hoverItem = (key, context) => {
-    //     context.selectPreset(key)
-    // }
-    // mouseLeaveItem = (context) => {
-    //     context.selectPreset(this.state.currentItem);
-    //     console.log(this.state.currentItem)
-    // }
+    hoverItem = (key) => {
+        this.props.handleSelectItem(key)
+    }
+    mouseLeaveItem = () => {
+        this.props.handleSelectItem(this.state.currentItem);
+        console.log(this.state.currentItem)
+    }
     render() {
         return (
             <StyledDropdownMenu>
@@ -40,11 +39,11 @@ class DropdownMenu extends Component {
                     {this.props.content.map(key => {
                         return (
                             <div 
-                                className="item"
+                                className={(this.state.currentItem === key || !this.state.currentItem && this.props.defaultDisplay === key) ? "item selectedItem" : "item notSelectedItem"}
                                 key={key}
                                 onClick={() => this.selectItem(key)}
-                                // onMouseEnter={() => this.hoverItem(key, context)}
-                                // onMouseLeave={() => this.mouseLeaveItem(context)}
+                                onMouseEnter={() => this.hoverItem(key)}
+                                onMouseLeave={() => this.mouseLeaveItem()}
                             >
                                 {key}
                             </div>
@@ -63,7 +62,7 @@ export default DropdownMenu;
 const StyledDropdownMenu = styled.div`
     display: flex;
     justify-content: center;
-    width: 100%;
+    // width: 100%;
     .content {
         position: absolute;
         width: 150px;
@@ -75,8 +74,8 @@ const StyledDropdownMenu = styled.div`
         padding: 3px;
         border: none;
         font-weight: bold;
-        color: ${props => props.theme.filters.dark};
-        background-color: ${props => props.theme.filters.main};
+        color: ${props => props.filters ? props.theme.filters.dark : props.theme.tints.dark };
+        background-color:${props => props.filters ? props.theme.filters.main : props.theme.tints.main };
         font-family: ${props => props.theme.titleFont};
         // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
         border-radius: ${props => props.theme.borderRadius};
@@ -84,7 +83,7 @@ const StyledDropdownMenu = styled.div`
 
         &:hover {
             cursor: pointer;
-            background-color: ${props => props.theme.filters.hovered};
+            background-color:${props => props.filters ? props.theme.filters.hovered : props.theme.tints.hovered };
 
         }
     }
@@ -96,13 +95,20 @@ const StyledDropdownMenu = styled.div`
         float: right;
     }
     .item {
-        background-color: ${props => props.theme.filters.light};
         padding: 5px;
         font-size: 9pt;
         color: ${props => props.theme.dark};
+    }
+    .selectedItem {
+        background-color: #42454f;
+        color: #bcbcbc;
+    }
+    .notSelectedItem {
+        background-color:${props => props.filters ? props.theme.filters.light : props.theme.tints.light };
         &:hover {
-            background-color: ${props => props.theme.filters.highlighted};
-            color: ${props => props.theme.filters.light};
+            cursor: pointer;
+            background-color:${props => props.filters ? props.theme.filters.highlighted : props.theme.tints.highlighted };
+            color:${props => props.filters ? props.theme.filters.light : props.theme.tints.light };
         }
     }
 `

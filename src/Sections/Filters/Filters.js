@@ -30,8 +30,6 @@ class Filters extends Component {
         this.setState({ dropdownSelect: selected })
     }
     renderDesktopView = (context) => {
-        const filterArr = Object.keys(context.state.presetInfo.filters);
-
         return (
             <div className="desktopView">
                 <div className="leftCol">
@@ -71,8 +69,6 @@ class Filters extends Component {
             <StyledFilterSection>
                 <MyContext.Consumer>
                     {(context) => {
-                        const filterArr = Object.keys(context.state.presetInfo.filters);
-
                         return (
                             <StyledFilterSection isMobile={context.state.isMobileWidth}>
                                 { (context.state.isMobileWidth) ? this.renderMobileView(context) : this.renderDesktopView(context) }

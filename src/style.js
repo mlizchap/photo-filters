@@ -24,6 +24,8 @@ export const theme = {
         hovered: '#add6f4',
         light: '#c4e5fc',
         dark: '#0c3f63',
+        hovered: '#c6e7ff',
+        highlighted: '#5495c4',
     },
     code: {
         main: '#f9b1d8', //pink
