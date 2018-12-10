@@ -1,7 +1,7 @@
 {
   "main.css": "/photo-filters/static/css/main.7af5fd4b.chunk.css",
-  "main.js": "/photo-filters/static/js/main.2c940e33.chunk.js",
-  "main.js.map": "/photo-filters/static/js/main.2c940e33.chunk.js.map",
+  "main.js": "/photo-filters/static/js/main.53d751fa.chunk.js",
+  "main.js.map": "/photo-filters/static/js/main.53d751fa.chunk.js.map",
   "static/js/1.cf251b0f.chunk.js": "/photo-filters/static/js/1.cf251b0f.chunk.js",
   "static/js/1.cf251b0f.chunk.js.map": "/photo-filters/static/js/1.cf251b0f.chunk.js.map",
   "runtime~main.js": "/photo-filters/static/js/runtime~main.e3f32397.js",
@@ -9,6 +9,6 @@
   "static/media/image1.jpg": "/photo-filters/static/media/image1.be93f7a4.jpg",
   "static/css/main.7af5fd4b.chunk.css.map": "/photo-filters/static/css/main.7af5fd4b.chunk.css.map",
   "index.html": "/photo-filters/index.html",
-  "precache-manifest.3a2f9a03c69b20c517bd16be6a0b4679.js": "/photo-filters/precache-manifest.3a2f9a03c69b20c517bd16be6a0b4679.js",
+  "precache-manifest.ca786c376380986e5b120dae2f6110e8.js": "/photo-filters/precache-manifest.ca786c376380986e5b120dae2f6110e8.js",
   "service-worker.js": "/photo-filters/service-worker.js"
 }
