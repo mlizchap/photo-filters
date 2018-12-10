@@ -27,7 +27,7 @@ const StyledFooter = styled.div`
     text-align: center;
     font-size: 8pt;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px;
     background-color: ${props => props.theme.darkBg};
     font-family: ${props => props.theme.mainFont};
 `

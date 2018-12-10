@@ -68,7 +68,7 @@ class Filters extends Component {
                     title={context.state.presetInfo.filters[this.state.dropdownSelect].name}
                     min={context.state.presetInfo.filters[this.state.dropdownSelect].min}
                     max={context.state.presetInfo.filters[this.state.dropdownSelect].max}
-                    step={context.state.presetInfo.filters[this.state.dropdownSelect].step}
+                    step={context.state.presetInfo.filters[this.state.dropdownSelect].max / 100}
                     handleChange={(e) => context.changeValue(e.target.value, context.state.presetInfo.filters[this.state.dropdownSelect].name)}
                 />
             </div>

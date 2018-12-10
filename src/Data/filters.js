@@ -4,7 +4,7 @@ export const filters =
         name: "grayscale",
         min: 0,
         max: 1,
-        step: 0.01,
+        step: 0.1,
         unit: "",
         value: 0
     },
@@ -20,7 +20,7 @@ export const filters =
         name: "blur",
         min: 0,
         max: 10,
-        step: 0.01,
+        step: 0.1,
         unit: "px",
         value: 0
     },
@@ -28,7 +28,7 @@ export const filters =
         name: "sepia",
         min: 0,
         max: 1,
-        step: 0.01,
+        step: 0.1,
         value: 0,
         unit: ""
     }, 
@@ -52,7 +52,7 @@ export const filters =
         name: "contrast",
         min: 0,
         max: 3,
-        step: 0.01,
+        step: 0.1,
         value: 1,
         unit: ""
     },
@@ -60,7 +60,7 @@ export const filters =
         name: "opacity",
         min: 0,
         max: 1,
-        step: 0.01,
+        step: 0.1,
         value: 1,
         unit: ""
     }

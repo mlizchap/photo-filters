@@ -27,7 +27,7 @@ const StyledHeader = styled.div`
     .titleWrapper {
         // background-color: red;
         display: inline-block;
-        width: 250px;
+        width: 400px;
     }
     padding: 10px 0;
     font-size: 24pt;

@@ -140,14 +140,14 @@ const StyledCSSCode = styled.div`
         color: ${props => props.theme.presets.main};
     }
     .value {
-        color: ${props => props.theme.highlight_dull};
+        color: white;
         
     }
     .prop {
-        color: ${props => props.theme.code.light};
+        color: ${props => props.theme.tints.main};
     }
     .fn {
-        color: ${props => props.theme.tints.main};
+        color: ${props => props.theme.filters.main};
     }
 
 `
