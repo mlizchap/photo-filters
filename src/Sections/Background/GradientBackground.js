@@ -5,6 +5,10 @@ import { MyContext } from '../../Data/Provider';
 import ColorPicker from '../../Components/ColorPicker';
 import BlendmodeSelect from '../../Components/BlendmodeSelect/BlendmodeSelect';
 import Slider from '../../Components/Slider';
+import DropdownMenu from '../../Components/DropdownMenu';
+
+
+const {blendModes} = require('./blendModes');
 
 class GradientBackground extends Component {
     constructor(props) {
@@ -67,7 +71,14 @@ class GradientBackground extends Component {
 
                             <div className="bottomRow">
                                 <div className="blendMode">
-                                    <BlendmodeSelect display={blendMode} />
+                                    {/* <BlendmodeSelect display={blendMode} /> */}
+                                    <DropdownMenu 
+                                        small
+                                        content={blendModes} 
+                                        defaultDisplay="normal"
+                                        currentItem={context.state.presetInfo.background.gradient.blendMode}
+                                        handleSelectItem={(key) => {context.selectBlendMode(key)}}
+                                    />
                                 </div>
                                 <div className="opacitySlider">
                                     <Slider 

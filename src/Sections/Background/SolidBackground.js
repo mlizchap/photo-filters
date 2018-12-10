@@ -74,10 +74,8 @@ const StyledSolidBackground = styled.div`
         flex-direction: column;
         justify-content: space-evenly;
         height: 145px;
-        // width: ${props => props.isMobile ? '100%' : '70%'};
         margin-right: auto;
         margin-left: auto;
-        // background: red;
         align-content: center;
         width: ${props => props.isMobile ? '100%' : '80%'};
     }
@@ -110,9 +108,8 @@ const StyledSolidBackground = styled.div`
     .slider {
         margin-right: auto;
         margin-left: auto;
-        // background: orange;
         display: flex;
-        width: 100%;
+        width: ${props => props.isMobile ? '80%' : '100%'};
         // width: ${props => props.isMobile ? '100%' : '500px'};
         
     }

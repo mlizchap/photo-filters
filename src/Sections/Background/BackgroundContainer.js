@@ -18,12 +18,11 @@ class BackgroundContainer extends Component {
 
     render() {
         return (
-            <StyledBackgroundContainer>
                 <MyContext.Consumer>
                     {context => {
                         const { type } = context.state.presetInfo.background;
                         return (
-                            <div>
+                            <StyledBackgroundContainer isMobile={context.state.isMobileWidth}>
                                 <div className="bgTypeButtons">
                                     <button 
                                         className={(type === "solid") ? "selected" : "notSelected"}
@@ -49,11 +48,10 @@ class BackgroundContainer extends Component {
                                     : (type === "gradient") ? <GradientBackground /> 
                                         : <NoBackground /> }
                                 </div>
-                            </div>
+                            </StyledBackgroundContainer>
                         )
                     }}
                 </MyContext.Consumer>
-            </StyledBackgroundContainer>
         );
     }
 }
@@ -62,7 +60,7 @@ export default BackgroundContainer;
 
 const StyledBackgroundContainer = styled.div`
     height: 165px;
-    margin: 0 30px;
+    margin: ${props => props.isMobile ? '0' : '0 30px'};
 
     padding-bottom: 15px;
     .bgTypeButtons {
