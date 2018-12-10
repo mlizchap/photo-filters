@@ -43,7 +43,7 @@ class SolidBackground extends Component {
                                     </div>
                                     <div className="slider">
                                         <Slider 
-                                            fontSize='11pt'
+                                            small
                                             width="100%"
                                             value={opacity}
                                             title="solid opacity:"
@@ -115,15 +115,15 @@ const StyledSolidBackground = styled.div`
         font-size: 11pt;
     }
 
-    .slider {
-        margin-right: auto;
-        margin-left: auto;
-        display: flex;
-        width: 100%;
-        //width: ${props => props.isMobile ? '80%' : '100%'};
-        // width: ${props => props.isMobile ? '100%' : '500px'};
+    // .slider {
+    //     margin-right: auto;
+    //     margin-left: auto;
+    //     display: flex;
+    //     width: 100%;
+    //     //width: ${props => props.isMobile ? '80%' : '100%'};
+    //     // width: ${props => props.isMobile ? '100%' : '500px'};
         
-    }
+    // }
     // .topRow {
     //     display: flex;
     //     justify-content: space-around;

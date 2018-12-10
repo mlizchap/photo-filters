@@ -15,7 +15,9 @@ class Filters extends Component {
     renderSlider = (context, key) => {
         return (
                 <Slider 
+                filter={context.state.presetInfo.filters[this.state.dropdownSelect]}
                     small
+                    filters
                     key={key}
                     width="80%"
                     value={context.state.presetInfo.filters[key].value}
@@ -57,6 +59,8 @@ class Filters extends Component {
                     currentItem={this.state.dropdownSelect}
                 />
                 <Slider 
+                    tint
+                    filter={context.state.presetInfo.filters[this.state.dropdownSelect]}
                     small
                     width="80%"
                     value={context.state.presetInfo.filters[this.state.dropdownSelect].value}

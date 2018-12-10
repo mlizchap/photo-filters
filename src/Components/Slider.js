@@ -8,7 +8,7 @@ class Slider extends Component {
     }
     render() {
         return (
-            <StyledSlider {...this.props}>
+            <StyledSlider val={this.props.value} min={this.props.min} max={this.props.max} {...this.props}>
                 <div className="details">
                     <div className="title">{this.props.title}</div>
                     <div className="value">{this.props.value}{this.props.unit}</div>
@@ -62,9 +62,10 @@ const thumbStyle = (props) => {
         `-webkit-appearance: none;
         border: 1px solid #000000;
         height: 18px;
-        width: 8px;
+        width: 16px;
         border-radius: 3px;
-        background: ${props.theme.tints.main};
+        background: ${(props.filters) ? props.theme.filters.main : props.theme.tints.main };
+        filter: saturate(${((props.val - props.min) / props.max) * 150 + 40}%);
         cursor: pointer;
         margin-top: -7px; 
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;`
@@ -77,7 +78,7 @@ const trackStyle = (props) => {
         height: 4.2px;
         cursor: pointer;
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        background: green;
+        background: #e0e2e5;
         border-radius: 1.3px;
         border: 0.2px solid #010101;`
     )
