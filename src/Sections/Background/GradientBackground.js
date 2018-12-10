@@ -20,7 +20,7 @@ class GradientBackground extends Component {
                         <StyledGradientBackground isMobile={context.state.isMobileWidth}>
                             <div className="colorSection">
                                
-                                    { !context.state.isMobileWidth ?  <div className="description"><p>outer:</p></div> : null }
+                                    { !context.state.isMobileWidth ?  <div className="description"><span>outer <br />color:</span></div> : null }
                                 
 
                                 <div className="colorPicker">
@@ -44,7 +44,7 @@ class GradientBackground extends Component {
                             </div>
                             
                             <div className="colorSection">
-                            { !context.state.isMobileWidth ?  <div className="description"><p>inner:</p></div> : null }
+                            { !context.state.isMobileWidth ?  <div className="description"><span>inner <br />color:</span></div> : null }
 
                                 <div className="colorPicker">
                                     <ColorPicker 
@@ -97,6 +97,7 @@ const StyledGradientBackground = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     // background-color: orange;
+    padding: 5px;
     padding-bottom: 0px;
     p {
         font-size: 10pt;
@@ -105,12 +106,10 @@ const StyledGradientBackground = styled.div`
         flex-grow: 1;
     }
     .colorPicker {
-        padding-top: 5px;
+        padding-top: 13px;;
     }
     .colorSection {
-        display: flex;
-        // justify-content: space-around;
-        
+        display: flex;        
     }
     
     .colorSection > div, .bottomRow > div {
@@ -122,13 +121,14 @@ const StyledGradientBackground = styled.div`
         justify-content: space-around;
     }
     .blendMode {
-        // padding-right: 10px;
-        // padding-left: 10px;
         padding-top: 10px;
     }
     .opacitySlider {
         flex-grow: 1;
-        // padding-right: 10px;
-        // padding-left: 10px;
+    }
+    .description {
+        font-size: 12pt;
+        margin: 0;
+        // background: red;
     }
 `
