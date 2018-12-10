@@ -51,6 +51,7 @@ class Filters extends Component {
                     content={filterArr} 
                     handleSelectItem={this.dropdownSelectFilter}
                     defaultDisplay="grayscale"
+                    currentItem={this.state.dropdownSelect}
                 />
                 <Slider 
                     width="80%"

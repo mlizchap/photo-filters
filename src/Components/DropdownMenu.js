@@ -29,7 +29,7 @@ class DropdownMenu extends Component {
             <StyledDropdownMenu>
                 <div onMouseLeave={() => this.setState({ showContent: false })}>
                     <button onClick={this.toggleContent}>
-                        <span className="btnText">{this.state.currentItem || this.props.defaultDisplay }</span>
+                        <span className="btnText">{this.props.currentItem || this.props.defaultDisplay }</span>
                         <span className="btnArrow">&#9660;</span>
                     </button>
                     <div 
@@ -62,7 +62,7 @@ export default DropdownMenu;
 const StyledDropdownMenu = styled.div`
     display: flex;
     justify-content: center;
-    // width: 100%;
+    //width: 100%;
     .content {
         position: absolute;
         width: 150px;
@@ -100,7 +100,7 @@ const StyledDropdownMenu = styled.div`
         color: ${props => props.theme.dark};
     }
     .selectedItem {
-        background-color: #42454f;
+        background-color: #696c77;
         color: #bcbcbc;
     }
     .notSelectedItem {

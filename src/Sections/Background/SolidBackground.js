@@ -15,44 +15,50 @@ class SolidBackground extends Component {
     }
     render() {
         return (
-            <StyledSolidBackground>
                 <MyContext.Consumer>
                     {context => {
                         const { opacity, blendMode, color } = context.state.presetInfo.background.solid;
                         return (
-                            <div className="solidDetails">
-                                <div className="row">
-                                    <div className="text">tint color:</div>
-                                    <ColorPicker 
-                                        color={color}
-                                        handleSelectColor={context.changeSolidBgColor}
-                                    />
+                            <StyledSolidBackground isMobile={context.state.isMobileWidth}>
+                                <div className="solidDetails">
+                                    <div className="colorAndBlend">
+                                        <div className="colorRow">
+                                            <div className="text colorText">tint color:</div>
+                                            <ColorPicker 
+                                                color={color}
+                                                handleSelectColor={context.changeSolidBgColor}
+                                            />
+                                        </div>
+                                        <div className="row mixBlendRow">
+                                            <div className="text mixBlendText">mix blend mode:</div>
+                                            <DropdownMenu 
+                                                small
+                                                content={blendModes} 
+                                                defaultDisplay="normal"
+                                                currentItem={context.state.presetInfo.background.solid.blendMode}
+                                                handleSelectItem={(key) => {context.selectBlendMode(key)}}
+                                            />
+                                        </div>
+                                        {/* <BlendmodeSelect display={blendMode}/> */}
+                                    </div>
+                                    <div className="slider">
+                                        <Slider 
+                                            large
+                                            width="100%"
+                                            value={opacity}
+                                            title="opacity:"
+                                            min={0}
+                                            max={1}
+                                            step={.01}
+                                            handleChange={context.changeSolidBgOpacity}
+                                        />
+                                    </div>
                                 </div>
-                                <div className="row">
-                                    <div className="text">mix blend mode:</div>
-                                    <DropdownMenu 
-                                        small
-                                        content={blendModes} 
-                                        defaultDisplay="normal"
-                                        handleSelectItem={(key) => {context.selectBlendMode(key)}}
-                                    />
-                                    {/* <BlendmodeSelect display={blendMode}/> */}
-                                </div>
-                                <Slider 
-                                    large
-                                    width="70%"
-                                    value={opacity}
-                                    title="opacity:"
-                                    min={0}
-                                    max={1}
-                                    step={.01}
-                                    handleChange={context.changeSolidBgOpacity}
-                                />
-                            </div>
+                            </StyledSolidBackground>
                         )
                     }}
+
                 </MyContext.Consumer>
-            </StyledSolidBackground>
         )
     }
 }
@@ -68,18 +74,47 @@ const StyledSolidBackground = styled.div`
         flex-direction: column;
         justify-content: space-evenly;
         height: 145px;
-        width: 70%;
+        // width: ${props => props.isMobile ? '100%' : '70%'};
         margin-right: auto;
         margin-left: auto;
+        // background: red;
+        align-content: center;
+        width: ${props => props.isMobile ? '100%' : '80%'};
     }
-    .row {
+    .colorAndBlend {
         display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        // flex-direction: ${props => props.isMobile ? `row` : `column`};
+
+    }
+    .colorRow {
+        display: flex;
+        flex-direction: ${props => props.isMobile ? 'column' : 'row'}; 
+        padding-top:  ${props => props.isMobile ? '0px': '20px'};
+    }
+    .mixBlendRow {
+        display: flex;
+        flex-direction: column;
     }
     .text {
         font-family: ${props => props.theme.titleFont};
         font-weight: bold;
-        font-size: 12pt;
+        font-size: ${props => props.isMobile ? '9pt' : '11pt'};
         margin-right: 15px;
+    }
+    .mixBlendText {
+        text-align: center;
+    }
+
+    .slider {
+        margin-right: auto;
+        margin-left: auto;
+        // background: orange;
+        display: flex;
+        width: 100%;
+        // width: ${props => props.isMobile ? '100%' : '500px'};
+        
     }
     // .topRow {
     //     display: flex;
