@@ -61,7 +61,8 @@ export default BackgroundContainer;
 const StyledBackgroundContainer = styled.div`
     height: 165px;
     margin: ${props => props.isMobile ? '0' : '0 30px'};
-    color: ${props => props.theme.tints.main}
+    color: ${props => props.theme.tints.main};
+    letter-spacing: .1rem;
     padding-bottom: 15px;
     .bgTypeButtons {
         display: flex;

@@ -15,6 +15,7 @@ class Filters extends Component {
     renderSlider = (context, key) => {
         return (
                 <Slider 
+                    small
                     key={key}
                     width="80%"
                     value={context.state.presetInfo.filters[key].value}
@@ -56,6 +57,7 @@ class Filters extends Component {
                     currentItem={this.state.dropdownSelect}
                 />
                 <Slider 
+                    small
                     width="80%"
                     value={context.state.presetInfo.filters[this.state.dropdownSelect].value}
                     unit={context.state.presetInfo.filters[this.state.dropdownSelect].unit}
@@ -88,10 +90,11 @@ class Filters extends Component {
 export default Filters;
 
 const StyledFilterSection = styled.div`
+    color: ${props => props.theme.filters.main};
+    letter-spacing: .1rem;
     .desktopView {
         text-align: center;
         display: flex;
-    
     }
     .mobileView {
         display: flex;

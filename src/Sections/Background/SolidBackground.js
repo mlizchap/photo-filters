@@ -43,10 +43,10 @@ class SolidBackground extends Component {
                                     </div>
                                     <div className="slider">
                                         <Slider 
-                                            large
+                                            fontSize='11pt'
                                             width="100%"
                                             value={opacity}
-                                            title="opacity:"
+                                            title="solid opacity:"
                                             min={0}
                                             max={1}
                                             step={.01}
@@ -68,6 +68,8 @@ export default SolidBackground;
 const StyledSolidBackground = styled.div`
     // padding-bottom: 10px;
     padding-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
     align-items: center;
     .solidDetails {
         display: flex;
@@ -77,12 +79,12 @@ const StyledSolidBackground = styled.div`
         margin-right: auto;
         margin-left: auto;
         align-content: center;
-        width: ${props => props.isMobile ? '100%' : '80%'};
+        //width: ${props => props.isMobile ? '100%' : '80%'};
     }
     .colorAndBlend {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
         // flex-direction: ${props => props.isMobile ? `row` : `column`};
 
     }
@@ -90,6 +92,7 @@ const StyledSolidBackground = styled.div`
         display: flex;
         flex-direction: ${props => props.isMobile ? 'column' : 'row'}; 
         padding-top:  ${props => props.isMobile ? '0px': '20px'};
+        
     }
     .mixBlendRow {
         display: flex;
@@ -99,20 +102,25 @@ const StyledSolidBackground = styled.div`
         font-family: ${props => props.theme.titleFont};
         font-weight: bold;
         font-size: ${props => props.isMobile ? '9pt' : '11pt'};
-        margin-right: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .colorText {
+        margin-right: ${props => props.isMobile ? '0px': '10px'};
     }
     .mixBlendText {
         text-align: center;
     }
     .colorText {
-        font-size: 14pt;
+        font-size: 11pt;
     }
 
     .slider {
         margin-right: auto;
         margin-left: auto;
         display: flex;
-        width: ${props => props.isMobile ? '80%' : '100%'};
+        width: 100%;
+        //width: ${props => props.isMobile ? '80%' : '100%'};
         // width: ${props => props.isMobile ? '100%' : '500px'};
         
     }

@@ -39,6 +39,7 @@ class GradientBackground extends Component {
                                             width="100%"
                                             value={Math.round(inner.amount)}
                                             title="amount:"
+                                            fontSize='11pt'
                                             min={0}
                                             max={100}
                                             step={.01}
@@ -59,6 +60,7 @@ class GradientBackground extends Component {
                                 <div className="slider">
                                 <Slider 
                                     width="100%"
+                                    fontSize='11pt'
                                     value={`${Math.round(outer.amount)}`}
                                     title="amount:"
                                     min={0}
@@ -83,8 +85,9 @@ class GradientBackground extends Component {
                                 <div className="opacitySlider">
                                     <Slider 
                                         width="100%"
+                                        fontSize='11pt'
                                         value={opacity}
-                                        title="opacity:"
+                                        title="gradient opacity:"
                                         min={0}
                                         max={1}
                                         step={.01}
@@ -111,7 +114,7 @@ const StyledGradientBackground = styled.div`
     padding: 5px;
     padding-bottom: 0px;
     p {
-        font-size: 10pt;
+        font-size: 11pt;
     }
     .slider {
         flex-grow: 1;
