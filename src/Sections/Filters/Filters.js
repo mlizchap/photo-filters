@@ -48,6 +48,7 @@ class Filters extends Component {
         return (
             <div className="mobileView">
                 <DropdownMenu 
+                    filters
                     content={filterArr} 
                     handleSelectItem={this.dropdownSelectFilter}
                     defaultDisplay="grayscale"

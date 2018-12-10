@@ -73,11 +73,11 @@ class GradientBackground extends Component {
                                 <div className="blendMode">
                                     {/* <BlendmodeSelect display={blendMode} /> */}
                                     <DropdownMenu 
-                                        small
                                         content={blendModes} 
                                         defaultDisplay="normal"
                                         currentItem={context.state.presetInfo.background.gradient.blendMode}
                                         handleSelectItem={(key) => {context.selectBlendMode(key)}}
+                                        tint
                                     />
                                 </div>
                                 <div className="opacitySlider">
@@ -138,8 +138,8 @@ const StyledGradientBackground = styled.div`
         flex-grow: 1;
     }
     .description {
-        font-size: 12pt;
-        margin: 0;
+        font-size: 10pt;
+        margin-top: 9px;
         // background: red;
     }
 `

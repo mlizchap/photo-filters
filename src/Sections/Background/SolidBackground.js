@@ -32,7 +32,7 @@ class SolidBackground extends Component {
                                         <div className="row mixBlendRow">
                                             <div className="text mixBlendText">mix blend mode:</div>
                                             <DropdownMenu 
-                                                small
+                                                tint
                                                 content={blendModes} 
                                                 defaultDisplay="normal"
                                                 currentItem={context.state.presetInfo.background.solid.blendMode}
@@ -103,6 +103,9 @@ const StyledSolidBackground = styled.div`
     }
     .mixBlendText {
         text-align: center;
+    }
+    .colorText {
+        font-size: 14pt;
     }
 
     .slider {

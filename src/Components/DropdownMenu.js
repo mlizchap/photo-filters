@@ -26,7 +26,7 @@ class DropdownMenu extends Component {
     }
     render() {
         return (
-            <StyledDropdownMenu>
+            <StyledDropdownMenu {...this.props}>
                 <div onMouseLeave={() => this.setState({ showContent: false })}>
                     <button onClick={this.toggleContent}>
                         <span className="btnText">{this.props.currentItem || this.props.defaultDisplay }</span>
@@ -74,8 +74,8 @@ const StyledDropdownMenu = styled.div`
         padding: 3px;
         border: none;
         font-weight: bold;
-        color: ${props => props.filters ? props.theme.filters.dark : props.theme.tint ? props.theme.tints.dark : props.theme.presets.dark };
-        background-color:${props => props.filters ? props.theme.filters.main : props.theme.tint ? props.theme.tints.main : props.theme.presets.main };
+        color: ${props => props.filters ? props.theme.filters.dark : props.tint ? props.theme.tints.dark : props.theme.presets.dark };
+        background-color: ${props => props.filters ? props.theme.filters.main : props.tint ? props.theme.tints.main : props.theme.presets.main };
         font-family: ${props => props.theme.titleFont};
         // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
         border-radius: ${props => props.theme.borderRadius};
@@ -83,7 +83,7 @@ const StyledDropdownMenu = styled.div`
 
         &:hover {
             cursor: pointer;
-            background-color:${props => props.filters ? props.theme.filters.hovered : props.theme.tint ? props.theme.tints.hovered : props.theme.presets.hovered };
+            background-color:${props => props.filters ? props.theme.filters.hovered : props.tint ? props.theme.tints.hovered : props.theme.presets.hovered };
 
         }
     }
@@ -104,11 +104,11 @@ const StyledDropdownMenu = styled.div`
         color: #bcbcbc;
     }
     .notSelectedItem {
-        background-color:${props => props.filters ? props.theme.filters.light : props.theme.tint ? props.theme.tints.light : props.theme.presets.light };
+        background-color:${props => props.filters ? props.theme.filters.light : props.tint ? props.theme.tints.light : props.theme.presets.light };
         &:hover {
             cursor: pointer;
-            background-color:${props => props.filters ? props.theme.filters.highlighted : props.tints ? props.theme.tints.highlighted : props.theme.presets.highlighted};
-            color:${props => props.filters ? props.theme.filters.light : props.theme.tint ? props.theme.tints.light : props.theme.presets.light };
+            background-color:${props => props.filters ? props.theme.filters.highlighted : props.tint ? props.theme.tints.highlighted : props.theme.presets.highlighted};
+            color:${props => props.filters ? props.theme.filters.light : props.tint ? props.theme.tints.light : props.theme.presets.light };
         }
     }
 `
