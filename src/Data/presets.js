@@ -1,7 +1,7 @@
 import { filters } from './filters';
 
 const bgDefaults = {
-    type: "solid",
+    type: "none",
     solid: {
         color: "#4978F7",
         opacity: .5,
@@ -30,27 +30,6 @@ export const presetInfo = {
         },
         background: bgDefaults
     },
-    // "night vision": {
-    //     name: "night vision",
-    //     filters: filters,
-    //     background: {
-    //         ...bgDefaults,
-    //         type: "gradient",
-    //         gradient: {
-    //             ...bgDefaults.gradient,
-    //             inner: {
-    //                 color: '#0F0',
-    //                 amount: 0
-    //             },
-    //             outer: {
-    //                 color: '#000',
-    //                 amount: 80
-    //             },
-    //             blendMode: "multiply"
-    //         },
-            
-    //     }
-    // },
     1977: {
         name: "1977",
         filters: {
@@ -91,6 +70,104 @@ export const presetInfo = {
             sepia: {...filters.sepia, value: .2 }
         },
         background: bgDefaults
-    }
+    },
+    aden: {
+        name: "aden",
+        filters: filters,
+        background: {
+            ...bgDefaults,
+            type: "solid",
+            solid: {
+                ...bgDefaults.solid,
+                color: 'rgba(125,105,24);',
+                opacity: .1,
+                blendMode: 'multiply',
+            }
+        }
+    },
+    armaro: {
+        name: "armaro",
+        filters: {
+            ...filters,
+            sepia: {...filters.sepia, value: .35 },
+            contrast: {...filters.contrast, value: 1.1 },
+            brightness: {...filters.brightness, value: 120 },
+            saturate: {...filters.saturate, value: 130 },
+        },
+        background: {
+            ...bgDefaults,
+            type: "solid",
+            solid: {
+                ...bgDefaults.solid,
+                color: `#7d691833`,
+                opacity: .2,
+                blendMode: 'overlay',
+            }
+        }
+    },
+    ashby: {
+        name: "ashby",
+        filters: {
+            ...filters,
+            sepia: {...filters.sepia, value: .5},
+            contrast: {...filters.contrast, value: 1.2},
+            saturate: {...filters.saturate, value: 180},
+        },
+        background: {
+            ...bgDefaults,
 
+            type: "solid",
+            solid: {
+                ...bgDefaults.solid,
+                color: `#7d691859`,
+                opacity: .35,
+                blendMode: 'lighten',
+            },
+        }
+    },
+    // brooklyn: {
+    //     name: 'brooklyn',
+    //     filters: {
+    //         ...filters,
+    //         sepia: {...filters.sepia, value: .25},
+    //         contrast: {...filters.contrast, value: 1.25},
+    //         brightness: {...filters.brightness, value: 125},
+    //         'hue-rotate': {...filters['hue-rotate'], value: 5},
+    //     },
+    //     background:  { 
+    //         ...bgDefaults
+    //     }
+    // },
+    charmes: {
+        name: "charmes",
+        filters: {
+            ...filters,
+            sepia: {...filters.sepia, value: .25},
+            contrast: {...filters.contrast, value: 1.25},
+            brightness: {...filters.brightness, value: 125},
+            saturate: {...filters.saturate, value: 135},
+            'hue-rotate': {...filters['hue-rotate'], value: 5},
+        },
+        background: {
+            ...bgDefaults,
+
+            type: "solid",
+            solid: {
+                ...bgDefaults.solid,
+                color: '#7d691840',
+                opacity: .25,
+                blendMode: 'darken'
+            }
+        }
+    }
 }
+
+// brooklyn: {
+//     name: 'brooklyn',
+//     filters: {
+
+//     },
+//     background: {
+        
+//     }
+// }

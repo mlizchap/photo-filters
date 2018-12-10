@@ -83,7 +83,8 @@ class GradientBackground extends Component {
                                     />
                                 </div>
                                 <div className="opacitySlider">
-                                    {/* <Slider 
+                                    <Slider 
+                                        small
                                         width="100%"
                                         fontSize='11pt'
                                         value={opacity}
@@ -92,7 +93,7 @@ class GradientBackground extends Component {
                                         max={1}
                                         step={.01}
                                         handleChange={context.changeGradientOpacity}
-                                    /> */}
+                                    />
                                 </div>
                             </div>
                         </StyledGradientBackground>

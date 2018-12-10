@@ -31,13 +31,16 @@ class Image extends Component {
                                     backgroundColor: (background.type === "solid") ? background.solid.color : "white" 
                                 }}
                             ><img 
-                                    src={`${image}`} 
+                                    src={image}
+                                    width="100%"
+                                    // src="https://picturepan2.github.io/instagram.css/assets/img/instagram.jpg"
+                                    //width="200px"
+
                                     style={{
                                             filter: this.getFilterValues(context),
                                             opacity: (background.type === "solid") ? 1 - background.solid.opacity : (background.type === "gradient") ? 1 - background.gradient.opacity : 1,   
                                             mixBlendMode:  (background.type === "solid") ? background.solid.blendMode : (background.type === "gradient") ? background.gradient.blendMode : "none"
                                     }}
-                                    width="100%"
                                     //width={(context.state.isMobileWidth) ? '30%' : '100%'}
                                     alt="to edit" 
                                 />

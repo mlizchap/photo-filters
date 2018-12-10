@@ -25,9 +25,8 @@ const StyledHeader = styled.div`
     color: white;
     text-align: center;
     .titleWrapper {
-        // background-color: red;
         display: inline-block;
-        width: 400px;
+        width: ${props => props.isMobile ? '100%' : '400px'};
     }
     padding: 10px 0;
     font-size: 24pt;
