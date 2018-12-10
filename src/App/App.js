@@ -87,9 +87,9 @@ const StyledApp = styled.div`
   .mainContent_desktop {
     display: flex;
     max-width: 1000px;
-    margin: 30px auto; 
+    margin: 20px auto; 
     // background-color: ${props => props.theme.lightestBg};
-    padding: 20px;
+    // padding: 20px;
     border-radius: ${props => props.theme.borderRadius};
   }
   .leftColumn {

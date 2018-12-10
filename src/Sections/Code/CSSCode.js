@@ -26,7 +26,7 @@ class CSSCode extends Component {
                     filterArr.push(
                         <span key={filter}>
                             <span className="fn">{filter}(</span>
-                            <span className="value">{filterObj[filter].value}</span>
+                            <span className="value">{filterObj[filter].value}{filterObj[filter].unit}</span>
                             <span className="fn">){( (filtersToDisplay.length - 1) === index) ? ";" : " "}</span>
                         </span>
                     )
@@ -140,7 +140,7 @@ const StyledCSSCode = styled.div`
         color: ${props => props.theme.presets.main};
     }
     .value {
-        color: ${props => props.theme.filters.code};
+        color: ${props => props.theme.highlight_dull};
         
     }
     .prop {

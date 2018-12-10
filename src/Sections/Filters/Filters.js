@@ -18,11 +18,12 @@ class Filters extends Component {
                     key={key}
                     width="80%"
                     value={context.state.presetInfo.filters[key].value}
+                    unit={(key === "hue-rotate") ? <span>&deg;</span> : context.state.presetInfo.filters[key].unit}
                     title={context.state.presetInfo.filters[key].name}
                     min={context.state.presetInfo.filters[key].min}
                     max={context.state.presetInfo.filters[key].max}
                     step={context.state.presetInfo.filters[key].step}
-                    handleChange={(e) => context.changeValue(e.target.value, context.state.presetInfo.filters[key].name)}
+                    handleChange={(e) => context.changeValue(e.target.value, context.state.presetInfo.filters[key].name, context.state.presetInfo.filters[key].max)}
                 />
         )
     }
@@ -57,6 +58,7 @@ class Filters extends Component {
                 <Slider 
                     width="80%"
                     value={context.state.presetInfo.filters[this.state.dropdownSelect].value}
+                    unit={context.state.presetInfo.filters[this.state.dropdownSelect].unit}
                     title={context.state.presetInfo.filters[this.state.dropdownSelect].name}
                     min={context.state.presetInfo.filters[this.state.dropdownSelect].min}
                     max={context.state.presetInfo.filters[this.state.dropdownSelect].max}

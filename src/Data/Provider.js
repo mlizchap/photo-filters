@@ -27,13 +27,15 @@ class MyProvider extends Component {
     componentWillMount = () => {
         this.updateDimensions(window.innerWidth);
     }
-
-    changeValue = (value, name) => {
+    round = (value, decimals) => {
+        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    }
+    changeValue = (value, name, max) => {
         this.setState({ 
             presetInfo: { 
                 ...this.state.presetInfo,
                 filters: { ...this.state.presetInfo.filters,
-                    [name]: {...this.state.presetInfo.filters[name], value: value }}}
+                    [name]: {...this.state.presetInfo.filters[name], value: (max >= 100) ? this.round(value, 0) : (max <= 10 && max > 4) ? this.round(value, 1) : value }}}
         })
     }
 

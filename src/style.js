@@ -41,6 +41,7 @@ export const theme = {
         code: '#e1d6ff'
     },
     highlight: '#f7edc3',
+    highlight_dull: '#f9f4e0',
     highlightDark: '#e0a06b',
 
 }

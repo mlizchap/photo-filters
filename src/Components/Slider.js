@@ -11,7 +11,7 @@ class Slider extends Component {
             <StyledSlider {...this.props}>
                 <div className="details">
                     <div className="title">{this.props.title}</div>
-                    <div className="value">{this.props.value}</div>
+                    <div className="value">{this.props.value}{this.props.unit}</div>
                 </div>
                 <div className="slider">
                     <input 
@@ -47,11 +47,23 @@ const StyledSlider = styled.div`
     }
     .value {
         font-size: 8pt;
-        background-color: black;
-        width: 23px;
+        font-family: monospace;
+        background-color: #0f1014;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 3px;
+        width: 32px;
         text-align: center;
         color: white;
-        padding: 3px;
-        border-radius: 2px;
     }
+    // .value {
+    //     font-size: 8pt;
+    //     background-color: black;
+    //     width: 23px;
+    //     text-align: center;
+    //     color: white;
+    //     margin-bottom: 10px;
+    //     padding-top: 5px;
+    //     border-radius: 2px;
+    // }
 `
