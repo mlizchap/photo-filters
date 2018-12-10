@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { MyContext } from '../../Data/Provider';
 import { presetInfo } from '../../Data/presets';
 import styled from 'styled-components';
+import DropdownMenu from '../../Components/DropdownMenu';
 
 class Preset extends Component {
     constructor(props) {
@@ -13,20 +14,25 @@ class Preset extends Component {
             
          };
     }
-    toggleContent = () => {
-        this.setState({ showContent: !this.state.showContent})
-    }
     selectItem = (key, context) => {
+        console.log(key,context);
         context.selectPreset(key);
-        this.setState({ currentItem: key});
-        this.toggleContent();
+
     }
-    hoverItem = (key, context) => {
-        context.selectPreset(key)
-    }
-    mouseLeaveItem = (context) => {
-        context.selectPreset(this.state.currentItem);
-    }
+    // toggleContent = () => {
+    //     this.setState({ showContent: !this.state.showContent})
+    // }
+    // selectItem = (key, context) => {
+    //     context.selectPreset(key);
+    //     this.setState({ currentItem: key});
+    //     this.toggleContent();
+    // }
+    // hoverItem = (key, context) => {
+    //     context.selectPreset(key)
+    // }
+    // mouseLeaveItem = (context) => {
+    //     context.selectPreset(this.state.currentItem);
+    // }
     render() {
         return (
             
@@ -34,7 +40,14 @@ class Preset extends Component {
                     {context => {
                         return (
                             <StyledPresetSection>
-                                <div onMouseLeave={() => this.setState({ showContent: false })}>
+                                <DropdownMenu 
+                                    small
+                                    content={Object.keys(presetInfo)} 
+                                    defaultDisplay="normal"
+                                    currentItem={context.state.presetInfo.name.toUpperCase()}
+                                    handleSelectItem={(key) => this.selectItem(key, context)}
+                                />
+                                {/* <div onMouseLeave={() => this.setState({ showContent: false })}>
                                     <button onClick={this.toggleContent}>
                                         <span className="btnText">{context.state.presetInfo.name.toUpperCase()}</span>
                                         <span className="btnArrow">&#9660;</span>
@@ -58,7 +71,7 @@ class Preset extends Component {
                                         )
                                     })}
                                     </div>
-                                </div>
+                                </div> */}
                             </StyledPresetSection>
                         )
                     }}
