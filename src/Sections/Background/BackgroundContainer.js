@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import GradientBackground from './GradientBackground';
 import SolidBackground from './SolidBackground';
+import NoBackground from './NoBackground';
 
 class BackgroundContainer extends Component {
     constructor(props) {
@@ -44,7 +45,9 @@ class BackgroundContainer extends Component {
                                     </button>
                                 </div>
                                 <div className="typeSection">
-                                {(type === "solid") ? <SolidBackground /> : (type === "gradient") ? <GradientBackground /> : null }
+                                    {(type === "solid") ? <SolidBackground /> 
+                                    : (type === "gradient") ? <GradientBackground /> 
+                                        : <NoBackground /> }
                                 </div>
                             </div>
                         )
@@ -58,10 +61,7 @@ class BackgroundContainer extends Component {
 export default BackgroundContainer;
 
 const StyledBackgroundContainer = styled.div`
-    // background-color: lightgreen;
-    // width: 100%;
     height: 165px;
-    // background: red;
     margin: 0 30px;
 
     padding-bottom: 15px;

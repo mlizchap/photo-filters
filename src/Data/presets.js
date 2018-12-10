@@ -1,7 +1,7 @@
 import { filters } from './filters';
 
 const bgDefaults = {
-    type: "gradient",
+    type: "none",
     solid: {
         color: "#4978F7",
         opacity: .5,

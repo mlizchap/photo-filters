@@ -11,7 +11,7 @@ const Content = posed.div({
 
 
 class CollapsableBox extends React.Component {
-  state = { open: false };
+  state = { open: true };
   toggleOpen = () => {
     
     this.setState({ open: !this.state.open });
