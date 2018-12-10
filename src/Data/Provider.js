@@ -38,7 +38,7 @@ class MyProvider extends Component {
     }
 
     selectPreset = (selected) => {
-        console.log(selected)
+        console.log(presetInfo[selected])
         this.setState({
             presetName: selected,
             presetInfo: presetInfo[selected]

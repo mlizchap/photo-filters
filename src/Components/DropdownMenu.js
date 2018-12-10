@@ -5,7 +5,7 @@ class DropdownMenu extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            currentItem: "",
+            currentItem: "none",
             showContent: false,
          };
     }
@@ -13,12 +13,12 @@ class DropdownMenu extends Component {
         this.setState({ showContent: !this.state.showContent})
     }
     selectItem = (key) => {
-        this.props.handleSelectItem(key);
         this.setState({ currentItem: key});
+        this.props.handleSelectItem(key);
         this.toggleContent();
     }
     hoverItem = (key) => {
-        this.props.handleSelectItem(key)
+        this.props.handleSelectItem(key);
     }
     mouseLeaveItem = () => {
         this.props.handleSelectItem(this.state.currentItem);
@@ -74,8 +74,8 @@ const StyledDropdownMenu = styled.div`
         padding: 3px;
         border: none;
         font-weight: bold;
-        color: ${props => props.filters ? props.theme.filters.dark : props.theme.tints.dark };
-        background-color:${props => props.filters ? props.theme.filters.main : props.theme.tints.main };
+        color: ${props => props.filters ? props.theme.filters.dark : props.theme.tint ? props.theme.tints.dark : props.theme.presets.dark };
+        background-color:${props => props.filters ? props.theme.filters.main : props.theme.tint ? props.theme.tints.main : props.theme.presets.main };
         font-family: ${props => props.theme.titleFont};
         // background-image: linear-gradient(-180deg, #ff1c68 0%, #9f0092 300px);
         border-radius: ${props => props.theme.borderRadius};
@@ -83,7 +83,7 @@ const StyledDropdownMenu = styled.div`
 
         &:hover {
             cursor: pointer;
-            background-color:${props => props.filters ? props.theme.filters.hovered : props.theme.tints.hovered };
+            background-color:${props => props.filters ? props.theme.filters.hovered : props.theme.tint ? props.theme.tints.hovered : props.theme.presets.hovered };
 
         }
     }
@@ -104,11 +104,11 @@ const StyledDropdownMenu = styled.div`
         color: #bcbcbc;
     }
     .notSelectedItem {
-        background-color:${props => props.filters ? props.theme.filters.light : props.theme.tints.light };
+        background-color:${props => props.filters ? props.theme.filters.light : props.theme.tint ? props.theme.tints.light : props.theme.presets.light };
         &:hover {
             cursor: pointer;
-            background-color:${props => props.filters ? props.theme.filters.highlighted : props.theme.tints.highlighted };
-            color:${props => props.filters ? props.theme.filters.light : props.theme.tints.light };
+            background-color:${props => props.filters ? props.theme.filters.highlighted : props.tints ? props.theme.tints.highlighted : props.theme.presets.highlighted};
+            color:${props => props.filters ? props.theme.filters.light : props.theme.tint ? props.theme.tints.light : props.theme.presets.light };
         }
     }
 `
