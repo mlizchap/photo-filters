@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { MyContext } from '../../Data/Provider';
 
 class Header extends Component {
     constructor(props) {
@@ -8,11 +9,17 @@ class Header extends Component {
     }
     render() {
         return (
-            <StyledHeader>
-                <div className="titleWrapper">
-                    <h4>PHOTO FILTERS</h4>
-                </div>
-            </StyledHeader>
+            <MyContext.Consumer>
+                {context => {
+                    return (
+                        <StyledHeader isMobile={context.state.isMobileWidth}>
+                            <div className="titleWrapper">
+                                <h4>PHOTO FILTERS</h4>
+                            </div>
+                        </StyledHeader>
+                    )
+                }}
+            </MyContext.Consumer>
         );
     }
 }
@@ -20,13 +27,13 @@ class Header extends Component {
 export default Header;
 
 const StyledHeader = styled.div`
-    width: 100%;
+    // width: 100%;
     background-color: ${props => props.theme.darkBg};
     color: white;
     text-align: center;
     .titleWrapper {
         display: inline-block;
-        width: ${props => props.isMobile ? '100%' : '400px'};
+        // width: ${props => props.isMobile ? 'auto' : '400px'};
     }
     padding: 10px 0;
     font-size: 24pt;

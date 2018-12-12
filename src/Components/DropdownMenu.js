@@ -68,6 +68,7 @@ const StyledDropdownMenu = styled.div`
         width: 150px;
         max-height: 150px;
         overflow-y: scroll;
+        z-index: 2;
         font-family: ${props => props.theme.mainFont};
     }
     button {

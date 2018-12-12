@@ -59,7 +59,7 @@ class Filters extends Component {
                     currentItem={this.state.dropdownSelect}
                 />
                 <Slider 
-                    tint
+                    filters
                     filter={context.state.presetInfo.filters[this.state.dropdownSelect]}
                     small
                     width="80%"
@@ -96,6 +96,7 @@ export default Filters;
 const StyledFilterSection = styled.div`
     color: ${props => props.theme.filters.main};
     letter-spacing: .1rem;
+    font-size: 6pt;
     .desktopView {
         text-align: center;
         display: flex;

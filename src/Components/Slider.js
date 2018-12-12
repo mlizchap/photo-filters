@@ -68,7 +68,9 @@ const thumbStyle = (props) => {
         filter: saturate(${((props.val - props.min) / props.max) * 150 + 40}%);
         cursor: pointer;
         margin-top: -7px; 
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;`
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        z-index: -1;`
+        
     )
 }
 
