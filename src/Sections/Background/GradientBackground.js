@@ -88,7 +88,7 @@ class GradientBackground extends Component {
                                         width="100%"
                                         fontSize='11pt'
                                         value={opacity}
-                                        title="gradient opacity:"
+                                        title={(context.state.isMobileWidth) ? `opacity` : `gradient opacity`}
                                         min={0}
                                         max={1}
                                         step={.01}

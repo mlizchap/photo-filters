@@ -23,7 +23,7 @@ class SolidBackground extends Component {
                                 <div className="solidDetails">
                                     <div className="colorAndBlend">
                                         <div className="colorRow">
-                                            <div className="text colorText">tint color:</div>
+                                            <div className="text colorText">{(context.state.isMobileWidth) ? `color:` : `tint color:`}</div>
                                             <ColorPicker 
                                                 color={color}
                                                 handleSelectColor={context.changeSolidBgColor}
