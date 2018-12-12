@@ -56,12 +56,12 @@ export const filters =
         value: 1,
         unit: ""
     },
-    opacity: {
-        name: "opacity",
+    invert: {
+        name: "invert",
         min: 0,
         max: 1,
         step: 0.1,
-        value: 1,
+        value: 0,
         unit: ""
     }
 }
