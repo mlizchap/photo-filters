@@ -68,8 +68,8 @@ export default SolidBackground;
 const StyledSolidBackground = styled.div`
     // padding-bottom: 10px;
     padding-top: 15px;
-    margin-right: 25px;
-    margin-left: 25px;
+    margin-left: ${props => props.isMobile ? '0px' : '15px'};    
+    margin-right: ${props => props.isMobile ? '0px' : '15px'};    
     align-items: center;
     .solidDetails {
         display: flex;

@@ -60,13 +60,16 @@ export default BackgroundContainer;
 
 const StyledBackgroundContainer = styled.div`
     height: 165px;
-    margin: ${props => props.isMobile ? '0' : '0 30px'};
+    margin: ${props => props.isMobile ? '0 30px' : '0 30px'};
     color: ${props => props.theme.tints.main};
     letter-spacing: .1rem;
     padding-bottom: 15px;
+    
+    // background-color: blue;
     .bgTypeButtons {
         display: flex;
-        justify-content: space-around;
+        justify-content:  ${props => props.isMobile ? 'space-between' : 'space-around'};
+        // background-color: orange;
     }
     .bgTypeButtons button {
         font-family: inherit;

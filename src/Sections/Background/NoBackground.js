@@ -29,7 +29,7 @@ export default NoBackground;
 
 const StyledNoBackground = styled.div`
     // margin:  ${props => props.isMobile ? '30px 0px' : '30px'};;
-    margin: 30px;
+    margin-top: 30px;
     color: #696c77;
     font-family: ${props => props.titleFont};
     letter-spacing: .05rem;

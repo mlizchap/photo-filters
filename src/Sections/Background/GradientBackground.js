@@ -111,9 +111,10 @@ const StyledGradientBackground = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    // background-color: orange;
-    padding: 5px;
+    // padding: 5px;
     padding-bottom: 0px;
+    margin-left: ${props => props.isMobile ? '0px' : '15px'};    
+    margin-right: ${props => props.isMobile ? '0px' : '15px'};    
     p {
         font-size: 11pt;
     }
@@ -121,15 +122,18 @@ const StyledGradientBackground = styled.div`
         flex-grow: 1;
     }
     .colorPicker {
-        padding-top: 13px;;
+        padding-top: 13px;
+        padding-right: 15px; 
+        padding-left: 10px;        
+        // background-color: green;
     }
     .colorSection {
-        display: flex;        
+        display: flex;   
     }
     
     .colorSection > div, .bottomRow > div {
-        padding-right: 10px;
-        padding-left: 10px;
+        // padding-right: 10px;
+        // padding-left: 10px;
     }
     .bottomRow {
         display: flex;
@@ -137,6 +141,7 @@ const StyledGradientBackground = styled.div`
     }
     .blendMode {
         padding-top: 10px;
+        padding-right: 15px;
     }
     .opacitySlider {
         flex-grow: 1;
