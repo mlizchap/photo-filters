@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+const logo = require('../../static/ghLogo.png')
+
 class Footer extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +11,10 @@ class Footer extends Component {
     render() {
         return (
             <StyledFooter>
-                <a href="https://github.com/mlizchap/photo-filters">View Source</a>
+                <a href="https://github.com/mlizchap/photo-filters">
+                    <img className="logo" src={logo} width="20px" />
+                    <p className="sourceText">View Source</p>
+                </a>
             </StyledFooter>
         );
     }
@@ -36,5 +41,8 @@ const StyledFooter = styled.div`
         &:hover {
             color: ${props => props.theme.light};
         }
+    }
+    .sourceText {
+        display: inline-block;
     }
 `
