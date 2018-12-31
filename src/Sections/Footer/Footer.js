@@ -12,8 +12,8 @@ class Footer extends Component {
         return (
             <StyledFooter>
                 <a href="https://github.com/mlizchap/photo-filters">
-                    <img className="logo" src={logo} width="20px" />
-                    <p className="sourceText">View Source</p>
+                    {/* <img className="logo" src={logo} width="20px" /> */}
+                    View Source
                 </a>
             </StyledFooter>
         );
@@ -32,7 +32,7 @@ const StyledFooter = styled.div`
     text-align: center;
     font-size: 10pt;
     width: 100%;
-    padding: 10px 0px;
+    padding: 7px 0px;
     background-color: ${props => props.theme.darkBg};
     font-family: ${props => props.theme.mainFont};
     a {
