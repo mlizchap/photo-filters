@@ -3,7 +3,7 @@ export const theme = {
   borderRadius: "3px",
 
   // fonts
-  titleFont: "Arial",
+  titleFont: "Poppins",
   mainFont: "Quicksand",
 
   // colors
