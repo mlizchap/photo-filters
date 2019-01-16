@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { MyContext } from '../../Data/Provider';
 
-const image = require('../../static/image1.jpg');
+const image = require('../../static/pup.jpg');
 
 class Image extends Component {
     constructor(props) {
